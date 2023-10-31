@@ -1,1 +1,1 @@
-# NYC_Fund_Tracker
+# NYC Fund Tracker
