@@ -6,7 +6,15 @@
 **FY 2023**: July 1, 2022 to June 30, 2023\
 The records in our datasets span from FY2011 to FY2023.
 ### Files
-**Raw Data**: Raw budget expenditure data and raw city revenue data from 2011 to 2023 for the nine agencies listed below.
+**Raw Data**: 
+ - **Raw Data - Budget** : This file contains raw budget expenditure data from 2011 to 2023 for the nine agencies listed below.
+ - **Raw Data - Revenue** :  This file contains raw revenue data from 2011 to 2023 for the nine agencies listed below.
+
+**Code**:
+ - **Download data** : the R scripts that can retrieve data from checkbook NYC.
+ - **Data Processing**
+ - **Data Cleaning**
+ - **Data Analysis**
 
 ### Human Services Agency
 **068**- Administration for Children's Services\
