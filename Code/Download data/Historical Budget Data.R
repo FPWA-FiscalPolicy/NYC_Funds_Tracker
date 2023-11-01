@@ -1,7 +1,6 @@
 ### Read me first #######
 ## This script allows you to collect all the historical budget data from FY 2011
 
-
 # Loading the libraries ---------------------------------------------------
 defaultW <- getOption("warn")
 options(warn = -1)
@@ -28,7 +27,7 @@ url<-"https://www.checkbooknyc.com/api"
 agencies_code <- c('068','260','125','069','806','071','816','801',"040")
 
 # create the list of budget fiscal years
-# add year 2024 in line 28 for next year's update 
+# add 2024 in line 28 for FY24 update 
 years <- c(2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023)
 #### create the table for both years and agencies
 agency <- rep(agencies_code,each=length(years))
@@ -155,7 +154,7 @@ agency_year <- agency_year %>%
 #     distinct()
 # }
 
-scrape <- function(first=1,last=13){
+Historical_Budget_Data <- function(first=1,last=13){
   summary_table <- c()
   for (i in first:last){
     print(i)
@@ -255,21 +254,21 @@ scrape <- function(first=1,last=13){
 # Drivers: Scraping -----------------------------------------------------
 # 068-Administration for Children's Services
 # change "table_068 <- scrape(1,13)" to table_068 <- scrape(1,14) for FY24 update
-table_068 <- scrape(1,13)
+table_068 <- Historical_Budget_Data(1,13)
 # 260-Department of Youth and Community Development
 # change "table_260 <- scrape(14,26)" to table_068 <- scrape(15,28) for FY24 update
-table_260 <- scrape(14,26)
+table_260 <- Historical_Budget_Data(14,26)
 # 125-Department for the Aging
-table_125 <- scrape(27,39)
+table_125 <- Historical_Budget_Data(27,39)
 # 069-Department of Social Services
-table_069 <- scrape(40,52)
+table_069 <- Historical_Budget_Data(40,52)
 # 806-Housing Preservation and Development
-table_806 <- scrape(53,65)
+table_806 <- Historical_Budget_Data(53,65)
 # 071-Department of Homeless Services
-table_071 <- scrape(66,78)
+table_071 <- Historical_Budget_Data(66,78)
 # 816-Department of Health and Mental Hygiene
-table_816 <- scrape(79,91)
+table_816 <- Historical_Budget_Data(79,91)
 # 801-Department of Small Business Services
-table_801 <- scrape(92,104)
+table_801 <- Historical_Budget_Data(92,104)
 # 040-Department of Education
-table_040 <- scrape(105,117)
+table_040 <- Historical_Budget_Data(105,117)
