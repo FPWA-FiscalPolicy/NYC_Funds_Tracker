@@ -19,7 +19,7 @@ library("xlsx")
 # Scraping -----------------------------------------------------------
 url<-"https://www.checkbooknyc.com/api"
 
-#### create the list of eight agencies
+#### create the list of nine agencies
 # 068- Administration for Children's Services; 260-Department of Youth and Community Development;
 # 125-Department for the Aging; 069-Department of Social Services;806-Housing Preservation and Development;
 # 071-Department of Homeless Services; 816-Department of Health and Mental Hygiene;801-Department of Small Business Services
@@ -27,7 +27,7 @@ url<-"https://www.checkbooknyc.com/api"
 agencies_code <- c('068','260','125','069','806','071','816','801',"040")
 
 # create the list of budget fiscal years
-# add 2024 in line 28 for FY24 update 
+# add number 2024 for FY24 update 
 years <- c(2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023)
 #### create the table for both years and agencies
 agency <- rep(agencies_code,each=length(years))
