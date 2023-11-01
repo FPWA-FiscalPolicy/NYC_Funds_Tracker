@@ -9,3 +9,6 @@
 
 2. **_Historical Revenue Data.R_** : This script contains a function - Historical_Revenue_Data(). It can retrieve all the historical Revenue data from FY 2011 to the current fiscal year.
 
+## Notes:
+1. Revenue data has column "Fiscal year" and "Budget fiscal year". We use "Budget fiscal year" as the data selection criterion.
+2. For budget data, we use ‘Committed Budget’, which is the sum of ‘Pre-Encumbered’, ‘Encumbered’, ‘Accrued Expense’, ‘Cash Payments’ and ‘Post Adjustments’.
