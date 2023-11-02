@@ -1,5 +1,5 @@
 ### Read me first #######
-## This script allows you to collect all the historical budget data from FY 2011
+## This script can collect all the historical budget data from FY 2011
 
 # Loading the libraries ---------------------------------------------------
 defaultW <- getOption("warn")
@@ -13,7 +13,7 @@ library(tidyverse)
 library(RCurl)
 library(XML)
 library(DescTools)
-library("xlsx")
+library(xlsx) ## If there is no ‘xlsx’ package, please download JDK Development which can be accessed at the following url: https://www.oracle.com/java/technologies/downloads/#jdk21-mac
 #setwd('[insert the your work directory here]')
 
 # Scraping -----------------------------------------------------------
@@ -244,10 +244,9 @@ Historical_Budget_Data <- function(first=1,last=13){
       modified,encumbered,cash_expense,pre_encumbered,post_adjustment,accrued_expense
     )
     summary_table <- rbind(summary_table,current_summary_table)
-    Sys.sleep(5)
   }
-  current_name <- paste("~/Desktop/raw_budget_",agency_year[i,1],'.xlsx',sep='')
-  write.xlsx(summary_table,file =current_name,sheetName = "Sheet1")
+  current_name <- paste("~/Desktop/raw_budget_",agency_year[i,1],'.csv',sep='')
+  write.csv(summary_table,current_name)
   return(summary_table)
 }
 
