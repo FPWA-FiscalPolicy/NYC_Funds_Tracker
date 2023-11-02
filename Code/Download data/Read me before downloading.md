@@ -15,5 +15,9 @@
 
 
 ## Notes:
-1. Revenue data has column "Fiscal year" and "Budget fiscal year". We use "Budget fiscal year" as the data selection criterion.
-2. For budget data, we use ‘Committed Budget’, which is the sum of ‘Pre-Encumbered’, ‘Encumbered’, ‘Accrued Expense’, ‘Cash Payments’ and ‘Post Adjustments’.
+1. Revenue data has column "Fiscal year" and "Budget fiscal year". We use "Fiscal year" as the data selection criterion.
+
+2. Remove Closing Classification Names = "Old Accounts left in the Previous Year" and "Collected Unearned Revenue".
+
+3.  ‘Committed Budget’= sum of ‘Pre-Encumbered’, ‘Encumbered’, ‘Accrued Expense’, ‘Cash Payments’ and ‘Post Adjustments’.
+
