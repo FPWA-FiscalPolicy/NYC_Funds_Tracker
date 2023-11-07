@@ -12,7 +12,6 @@ library(jsonlite)
 library(tidyverse)
 library(RCurl)
 library(XML)
-library(DescTools)
 #setwd('[insert the your work directory here]')
 
 # Scraping -----------------------------------------------------------
@@ -44,7 +43,7 @@ agency_year <- agency_year %>%
   <records_from>1</records_from>
   <search_criteria>
   <criteria>
-  <name>budget_fiscal_year</name>
+  <name>fiscal_year</name>
   <type>value</type>
   <value>",year,"</value>
   </criteria>
@@ -79,7 +78,7 @@ agency_year <- agency_year %>%
   <records_from>20001</records_from>
   <search_criteria>
   <criteria>
-  <name>budget_fiscal_year</name>
+  <name>fiscal_year</name>
   <type>value</type>
   <value>",year,"</value>
   </criteria>
@@ -114,7 +113,7 @@ agency_year <- agency_year %>%
   <records_from>40001</records_from>
   <search_criteria>
   <criteria>
-  <name>budget_fiscal_year</name>
+  <name>fiscal_year</name>
   <type>value</type>
   <value>",year,"</value>
   </criteria>
