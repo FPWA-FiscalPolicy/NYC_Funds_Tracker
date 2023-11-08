@@ -238,6 +238,8 @@ Historical_Revenue_Data <- function(first,last){
       fiscal_year,adopted,modified,recognized,closing_classification_name
     )
     summary_table <- rbind(summary_table,current_summary_table)
+    Sys.sleep(2)
+    
   }
   current_name <- paste("~/Desktop/Revenue_",agency_year[i,1],'_all.csv',sep='')
   write.csv(summary_table,current_name)
