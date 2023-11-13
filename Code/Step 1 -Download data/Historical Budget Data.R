@@ -11,9 +11,7 @@ library(xml2)
 library(jsonlite)
 library(tidyverse)
 library(RCurl)
-library(XML)
-library(DescTools)
-library(xlsx) ## If there is no ‘xlsx’ package, please download JDK Development which can be accessed at the following url: https://www.oracle.com/java/technologies/downloads/#jdk21-mac
+library(XML)## If there is no ‘xlsx’ package, please download JDK Development which can be accessed at the following url: https://www.oracle.com/java/technologies/downloads/#jdk21-mac
 #setwd('[insert the your work directory here]')
 
 # Scraping -----------------------------------------------------------
@@ -247,7 +245,7 @@ Historical_Budget_Data <- function(first=1,last=13){
   }
   current_name <- paste("~/Desktop/raw_budget_",agency_year[i,1],'.csv',sep='')
   write.csv(summary_table,current_name)
-  return(summary_table)
+  #return(summary_table)
 }
 
 # Drivers: Scraping -----------------------------------------------------

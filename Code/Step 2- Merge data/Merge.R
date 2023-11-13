@@ -3,6 +3,30 @@
    #1. confirm the url link below is correct
    #2. confirm the agency code list is correct
 
+
+# budget_816 <- fread("~/Desktop/NYC_Fund_Tracker/Raw Data/Raw Data - Budget/budget_816_all.csv")
+# budget_816 <- budget_816 %>%
+#   filter(year != 2023)
+# 
+# budget_816_2023_raw <- fread("~/Desktop/816_2023_budget.csv")
+# budget_816_2023 <- data.frame(V1=rep(0,nrow(budget_816_2023_raw)),
+#                               agency=budget_816_2023_raw$Agency,
+#                               year=budget_816_2023_raw$Year,
+#                               department=budget_816_2023_raw$Department,
+#                               expense_category=budget_816_2023_raw$`Expense Category`,
+#                               budget_code=budget_816_2023_raw$`Budget Code`,
+#                               budget_name=budget_816_2023_raw$`Budget Name`,
+#                               adopted=budget_816_2023_raw$Adopted,
+#                               modified=budget_816_2023_raw$Modified,
+#                               encumbered=budget_816_2023_raw$Encumbered,
+#                               cash_expense=budget_816_2023_raw$`Cash Expense`,
+#                               pre_encumbered=budget_816_2023_raw$`Pre-Encumbered`,
+#                               post_adjustment=budget_816_2023_raw$`Post Adjustments`,
+#                               accrued_expense=budget_816_2023_raw$`Accrued Expense`
+# )
+# budget_816 <- data.frame(rbind(budget_816,budget_816_2023))
+# write.csv(budget_816,"~/Desktop/budget_816_all.csv")  
+  
 library(RCurl)
 library(tidyverse)
 agencies_code <- c('068','260','125','069','806','071','816','801',"040")
