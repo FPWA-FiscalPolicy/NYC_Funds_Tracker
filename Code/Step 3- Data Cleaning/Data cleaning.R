@@ -24,7 +24,12 @@ Budget_data <- left_join(Budget_data,agency_code_dataframe,by="agency")
 
 # read Citywide budget and revenue data
 #Citywide_data <- read.csv("https://raw.githubusercontent.com/ZoeyyyLyu/NYC_Fund_Tracker/main/Raw%20Data/Citywide_Revenue.xlsx")
-Citywide_data <- fread("~/Desktop/Merged_data/raw_budget.csv")
+Citywide_data <- read.csv("~/Desktop/NYC_Fund_Tracker/RawData/Citywide_Data.csv")
+Citywide_data <- Citywide_data %>%
+  dplyr::select(-Revenue.Category,-Recognized.Categorical.Citywide.Rev,-Remaining.Categorical.Citywide.Rev,-Path,
+                -Adjusted.Recognized.Categorical.Citywide.Rev)%>%
+  distinct()
+
 
 # calculate Intra-city sales
 intra_city_sales <- Revenue_data %>%
@@ -62,6 +67,9 @@ agency_revenue <- Revenue_data %>%
   group_by(agency_code,fiscal_year)%>%
   summarize(agency_recog_rev=sum(recognized,na.rm=T))
 Revenue_data <- left_join(Revenue_data,agency_revenue,by=c("agency_code","fiscal_year"))
+Revenue_data <- Revenue_data %>% 
+  rename("year" = "fiscal_year")
+Revenue_data <- left_join(Revenue_data,Citywide_data,by=c("year"))
 
 ###############################
 ########### Budget  ###########
@@ -85,20 +93,11 @@ agency_Budget_summary <- agency_Budget_summary%>% dplyr:: select(-Prior.Payable,
 
 Budget_data <- left_join(Budget_data,agency_Budget_summary,by=c("agency_code","year"))
 
+Budget_data <- left_join(Budget_data,Citywide_data,by=c("year"))
 
 
 
-# write.csv(a,"~/Desktop/table.csv")
 
-# add columns with CPI adjustment
-# add citywide total revenue
-# add citywide total budget
+#the budget data for ACS is not match! check what happend there!
 # match the rsc to the rev dataset. 
-
-## Work for next week:
-# *** the budget data for ACS is not match! check what happend there!
-   # 1. add columns with CPI adjustment, CPI-U method
-   # 2. add citywide total revenue
-   # 3. add citywide total budget
-   # 4. match the rsc to the rev dataset. 
   
