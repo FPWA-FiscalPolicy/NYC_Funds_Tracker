@@ -69,6 +69,7 @@ agency_year <- agency_year %>%
         <column>cash_expense</column>
         <column>post_adjustment</column>
         <column>accrued_expense</column>
+        <column>committed</column>
     </response_columns>
 </request>",sep=''))
 
@@ -104,6 +105,7 @@ agency_year <- agency_year %>%
         <column>cash_expense</column>
         <column>post_adjustment</column>
         <column>accrued_expense</column>
+        <column>committed</column>
     </response_columns>
 </request>",sep=''))
 
@@ -139,6 +141,7 @@ agency_year <- agency_year %>%
         <column>cash_expense</column>
         <column>post_adjustment</column>
         <column>accrued_expense</column>
+        <column>committed</column>
     </response_columns>
 </request>",sep=''))
 
@@ -182,7 +185,7 @@ Historical_Budget_Data <- function(first=1,last=13){
     pre_encumbered <- xmlValue(xmltext["//pre_encumbered"])
     post_adjustment <- xmlValue(xmltext["//post_adjustment"])
     accrued_expense <- xmlValue(xmltext["//accrued_expense"])
-    
+    committed <- xmlValue(xmltext["//committed"])
     # make another api call for record #20001- #40000
     if (length(agency)==20000){
       #Sys.sleep(5)
@@ -208,6 +211,7 @@ Historical_Budget_Data <- function(first=1,last=13){
       pre_encumbered <- xmlValue(xmltext["//pre_encumbered"])
       post_adjustment <- xmlValue(xmltext["//post_adjustment"])
       accrued_expense <- xmlValue(xmltext["//accrued_expense"])
+      committed <- xmlValue(xmltext["//committed"])
     }
     
     # make another api call for record #40001- #60000
@@ -234,12 +238,13 @@ Historical_Budget_Data <- function(first=1,last=13){
       pre_encumbered <- xmlValue(xmltext["//pre_encumbered"])
       post_adjustment <- xmlValue(xmltext["//post_adjustment"])
       accrued_expense <- xmlValue(xmltext["//accrued_expense"])
+      committed <- xmlValue(xmltext["//committed"])
     }
     
     # Combine all columns
     current_summary_table <- cbind(
       agency,year,department,expense_category,budget_code, budget_name,adopted,
-      modified,encumbered,cash_expense,pre_encumbered,post_adjustment,accrued_expense
+      modified,encumbered,cash_expense,pre_encumbered,post_adjustment,accrued_expense,committed
     )
     summary_table <- rbind(summary_table,current_summary_table)
   }

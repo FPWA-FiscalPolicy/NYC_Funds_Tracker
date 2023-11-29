@@ -1,10 +1,12 @@
 # Read Me Before cleaning the data
 
 # Revenue
+The checkbook revenue data should be matched to "Comptroller’s Report for Fiscal 2023 Part II-F—General Fund—Schedule G3" 
 1. Delete: closing_classification_name= "Collected Unearned Revenue Roll" / "Accounts Left In Old Year";
 2. Remove funding class = "INTRA-CITY SALES" / "CAPITAL FUNDS - I.F.A."
 
 # Budget
+The checkbook budget data should be matched to "Comptroller’s Report for Fiscal 2023 Part II-F—General Fund—Schedule G5" 
 1. $Actual \ Budget\  Expenditure= Commited +Cash \ Expense$, \
 where $Committed= Pre\ Encumbered+Encumbered+Accrued \ Expense+Cash \ Payments+Post \ Adjustments$. 
 

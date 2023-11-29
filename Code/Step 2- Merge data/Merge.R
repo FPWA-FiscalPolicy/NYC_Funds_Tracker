@@ -27,7 +27,7 @@ write.csv(raw_budget,"~/Desktop/raw_revenue.csv")
 url<- "https://raw.githubusercontent.com/ZoeyyyLyu/NYC_Fund_Tracker/main/Raw%20Data/Raw%20Data%20-%20Budget/"
 for (i in agencies_code){
   print(i)
-  filename <- paste0("budget_",i,"_all.csv")
+  filename <- paste0("raw_budget_",i,"_all.csv")
   c_url <- paste0(url,filename)
   if (i==agencies_code[1]){
     raw_budget <- read.csv(c_url)

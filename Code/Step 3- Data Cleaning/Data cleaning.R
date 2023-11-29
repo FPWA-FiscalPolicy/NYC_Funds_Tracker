@@ -71,6 +71,7 @@ Revenue_data <- Revenue_data %>%
   rename("year" = "fiscal_year")
 Revenue_data <- left_join(Revenue_data,Citywide_data,by=c("year"))
 
+write.csv(Revenue_data,"~/Desktop/cleaned_Revenue_data.csv")
 ###############################
 ########### Budget  ###########
 ###############################
@@ -95,9 +96,16 @@ Budget_data <- left_join(Budget_data,agency_Budget_summary,by=c("agency_code","y
 
 Budget_data <- left_join(Budget_data,Citywide_data,by=c("year"))
 
+write.csv(Budget_data,"~/Desktop/cleaned_Budget_data.csv")
+
+a <- Budget_data %>%
+  filter(year==2023 &agency_code=="068")%>%
+  group_by(department)%>%
+  summarize(sum_modified=sum(modified,na.rm=T))
 
 
-
-#the budget data for ACS is not match! check what happend there!
+#the budget data for ACS is not match! check what happend there!  
+  # - missing the column "commited" in budget data
+  # - already re-downloaded the data and need to further merge and clean it. After data cleaning, audit again.
 # match the rsc to the rev dataset. 
   
