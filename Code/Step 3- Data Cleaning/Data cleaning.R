@@ -41,7 +41,8 @@ intra_city_sales <- Revenue_data %>%
 colnames(intra_city_sales)[2] <- c("year")
 
 # calculate Prior_payable
-Prior_payable <- read.csv("https://raw.githubusercontent.com/ZoeyyyLyu/NYC_Fund_Tracker/main/Raw%20Data/Prior_Payable.csv")
+
+Prior_payable <- read.csv("https://raw.githubusercontent.com/ZoeyyyLyu/NYC_Fund_Tracker/main/RawData/Prior_Payable.csv")
 Prior_payable <- Prior_payable %>%
   dplyr::select(-agency_code)
 Prior_payable <-left_join(Prior_payable,agency_code_dataframe,by=c("agency"))
@@ -98,10 +99,6 @@ Budget_data <- left_join(Budget_data,Citywide_data,by=c("year"))
 
 write.csv(Budget_data,"~/Desktop/cleaned_Budget_data.csv")
 
-a <- Budget_data %>%
-  filter(year==2023 &agency_code=="068")%>%
-  group_by(department)%>%
-  summarize(sum_modified=sum(modified,na.rm=T))
 
 
 #the budget data for ACS is not match! check what happend there!  
