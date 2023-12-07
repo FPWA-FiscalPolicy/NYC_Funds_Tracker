@@ -1,0 +1,2279 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20231.23.1011.0410                               -->
+<workbook original-version='18.1' source-build='2023.1.7 (20231.23.1011.0410)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='cleaned_Budget_data.csv+ (Multiple Connections)' inline='true' name='federated.1o6qdkt0q6rufo140zqr61xq3icp' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='cleaned_Budget_data' name='textscan.0ncd57x1gj9ve218t3tm71b9tlso'>
+            <connection class='textscan' directory='/Users/jennylyu/Desktop/Cleaned data' filename='cleaned_Budget_data.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+          <named-connection caption='cleaned_Revenue_data' name='textscan.15l0wzb1phx03z16pnhux0v4yghx'>
+            <connection class='textscan' directory='/Users/jennylyu/Desktop/Cleaned data' filename='cleaned_Revenue_data.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.0ncd57x1gj9ve218t3tm71b9tlso' name='cleaned_Budget_data.csv' table='[cleaned_Budget_data#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='integer' name='V1' ordinal='1' />
+            <column datatype='string' name='agency' ordinal='2' />
+            <column datatype='integer' name='year' ordinal='3' />
+            <column datatype='string' name='department' ordinal='4' />
+            <column datatype='string' name='expense_category' ordinal='5' />
+            <column datatype='integer' name='budget_code' ordinal='6' />
+            <column datatype='string' name='budget_name' ordinal='7' />
+            <column datatype='real' name='adopted' ordinal='8' />
+            <column datatype='real' name='modified' ordinal='9' />
+            <column datatype='integer' name='encumbered' ordinal='10' />
+            <column datatype='real' name='cash_expense' ordinal='11' />
+            <column datatype='integer' name='pre_encumbered' ordinal='12' />
+            <column datatype='real' name='post_adjustment' ordinal='13' />
+            <column datatype='real' name='accrued_expense' ordinal='14' />
+            <column datatype='real' name='committed' ordinal='15' />
+            <column datatype='integer' name='agency_code' ordinal='16' />
+            <column datatype='real' name='actual_expenditure' ordinal='17' />
+            <column datatype='real' name='agency_total_budget.x' ordinal='18' />
+            <column datatype='real' name='Citywide.Recognized.Rev.x' ordinal='19' />
+            <column datatype='real' name='Remaining.Citywide.Rev.x' ordinal='20' />
+            <column datatype='real' name='Citywide.Committed.Budget.x' ordinal='21' />
+            <column datatype='integer' name='Remaining.Budget.x' ordinal='22' />
+            <column datatype='real' name='FY_CPI.x' ordinal='23' />
+            <column datatype='integer' name='Adjusted.Total.Recognized.Citywide.Rev.x' ordinal='24' />
+            <column datatype='integer' name='Adjusted.Total.Citywide.Committed.Budget.x' ordinal='25' />
+            <column datatype='real' name='Adjusted.Remaining.Budget.x' ordinal='26' />
+            <column datatype='real' name='agency_total_budget.y' ordinal='27' />
+            <column datatype='real' name='Citywide.Recognized.Rev.y' ordinal='28' />
+            <column datatype='real' name='Remaining.Citywide.Rev.y' ordinal='29' />
+            <column datatype='real' name='Citywide.Committed.Budget.y' ordinal='30' />
+            <column datatype='integer' name='Remaining.Budget.y' ordinal='31' />
+            <column datatype='real' name='FY_CPI.y' ordinal='32' />
+            <column datatype='integer' name='Adjusted.Total.Recognized.Citywide.Rev.y' ordinal='33' />
+            <column datatype='integer' name='Adjusted.Total.Citywide.Committed.Budget.y' ordinal='34' />
+            <column datatype='real' name='Adjusted.Remaining.Budget.y' ordinal='35' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='textscan.0ncd57x1gj9ve218t3tm71b9tlso' name='cleaned_Budget_data.csv' table='[cleaned_Budget_data#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='integer' name='V1' ordinal='1' />
+              <column datatype='string' name='agency' ordinal='2' />
+              <column datatype='integer' name='year' ordinal='3' />
+              <column datatype='string' name='department' ordinal='4' />
+              <column datatype='string' name='expense_category' ordinal='5' />
+              <column datatype='integer' name='budget_code' ordinal='6' />
+              <column datatype='string' name='budget_name' ordinal='7' />
+              <column datatype='real' name='adopted' ordinal='8' />
+              <column datatype='real' name='modified' ordinal='9' />
+              <column datatype='integer' name='encumbered' ordinal='10' />
+              <column datatype='real' name='cash_expense' ordinal='11' />
+              <column datatype='integer' name='pre_encumbered' ordinal='12' />
+              <column datatype='real' name='post_adjustment' ordinal='13' />
+              <column datatype='real' name='accrued_expense' ordinal='14' />
+              <column datatype='real' name='committed' ordinal='15' />
+              <column datatype='integer' name='agency_code' ordinal='16' />
+              <column datatype='real' name='actual_expenditure' ordinal='17' />
+              <column datatype='real' name='agency_total_budget.x' ordinal='18' />
+              <column datatype='real' name='Citywide.Recognized.Rev.x' ordinal='19' />
+              <column datatype='real' name='Remaining.Citywide.Rev.x' ordinal='20' />
+              <column datatype='real' name='Citywide.Committed.Budget.x' ordinal='21' />
+              <column datatype='integer' name='Remaining.Budget.x' ordinal='22' />
+              <column datatype='real' name='FY_CPI.x' ordinal='23' />
+              <column datatype='integer' name='Adjusted.Total.Recognized.Citywide.Rev.x' ordinal='24' />
+              <column datatype='integer' name='Adjusted.Total.Citywide.Committed.Budget.x' ordinal='25' />
+              <column datatype='real' name='Adjusted.Remaining.Budget.x' ordinal='26' />
+              <column datatype='real' name='agency_total_budget.y' ordinal='27' />
+              <column datatype='real' name='Citywide.Recognized.Rev.y' ordinal='28' />
+              <column datatype='real' name='Remaining.Citywide.Rev.y' ordinal='29' />
+              <column datatype='real' name='Citywide.Committed.Budget.y' ordinal='30' />
+              <column datatype='integer' name='Remaining.Budget.y' ordinal='31' />
+              <column datatype='real' name='FY_CPI.y' ordinal='32' />
+              <column datatype='integer' name='Adjusted.Total.Recognized.Citywide.Rev.y' ordinal='33' />
+              <column datatype='integer' name='Adjusted.Total.Citywide.Committed.Budget.y' ordinal='34' />
+              <column datatype='real' name='Adjusted.Remaining.Budget.y' ordinal='35' />
+            </columns>
+          </relation>
+          <relation connection='textscan.15l0wzb1phx03z16pnhux0v4yghx' name='cleaned_Revenue_data.csv' table='[cleaned_Revenue_data#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='string' name='agency' ordinal='1' />
+              <column datatype='string' name='revenue_category' ordinal='2' />
+              <column datatype='string' name='revenue_source' ordinal='3' />
+              <column datatype='string' name='fund_class' ordinal='4' />
+              <column datatype='string' name='funding_class' ordinal='5' />
+              <column datatype='string' name='revenue_class' ordinal='6' />
+              <column datatype='integer' name='year' ordinal='7' />
+              <column datatype='string' name='adopted' ordinal='8' />
+              <column datatype='string' name='modified' ordinal='9' />
+              <column datatype='real' name='recognized' ordinal='10' />
+              <column datatype='string' name='closing_classification_name' ordinal='11' />
+              <column datatype='integer' name='agency_code' ordinal='12' />
+              <column datatype='real' name='agency_recog_rev' ordinal='13' />
+              <column datatype='real' name='Citywide.Recognized.Rev' ordinal='14' />
+              <column datatype='real' name='Remaining.Citywide.Rev' ordinal='15' />
+              <column datatype='real' name='Citywide.Committed.Budget' ordinal='16' />
+              <column datatype='integer' name='Remaining.Budget' ordinal='17' />
+              <column datatype='real' name='FY_CPI' ordinal='18' />
+              <column datatype='integer' name='Adjusted.Total.Recognized.Citywide.Rev' ordinal='19' />
+              <column datatype='integer' name='Adjusted.Total.Citywide.Committed.Budget' ordinal='20' />
+              <column datatype='real' name='Adjusted.Remaining.Budget' ordinal='21' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[Adjusted.Remaining.Budget.x]' value='[cleaned_Budget_data.csv].[Adjusted.Remaining.Budget.x]' />
+          <map key='[Adjusted.Remaining.Budget.y]' value='[cleaned_Budget_data.csv].[Adjusted.Remaining.Budget.y]' />
+          <map key='[Adjusted.Remaining.Budget]' value='[cleaned_Revenue_data.csv].[Adjusted.Remaining.Budget]' />
+          <map key='[Adjusted.Total.Citywide.Committed.Budget.x]' value='[cleaned_Budget_data.csv].[Adjusted.Total.Citywide.Committed.Budget.x]' />
+          <map key='[Adjusted.Total.Citywide.Committed.Budget.y]' value='[cleaned_Budget_data.csv].[Adjusted.Total.Citywide.Committed.Budget.y]' />
+          <map key='[Adjusted.Total.Citywide.Committed.Budget]' value='[cleaned_Revenue_data.csv].[Adjusted.Total.Citywide.Committed.Budget]' />
+          <map key='[Adjusted.Total.Recognized.Citywide.Rev.x]' value='[cleaned_Budget_data.csv].[Adjusted.Total.Recognized.Citywide.Rev.x]' />
+          <map key='[Adjusted.Total.Recognized.Citywide.Rev.y]' value='[cleaned_Budget_data.csv].[Adjusted.Total.Recognized.Citywide.Rev.y]' />
+          <map key='[Adjusted.Total.Recognized.Citywide.Rev]' value='[cleaned_Revenue_data.csv].[Adjusted.Total.Recognized.Citywide.Rev]' />
+          <map key='[Citywide.Committed.Budget.x]' value='[cleaned_Budget_data.csv].[Citywide.Committed.Budget.x]' />
+          <map key='[Citywide.Committed.Budget.y]' value='[cleaned_Budget_data.csv].[Citywide.Committed.Budget.y]' />
+          <map key='[Citywide.Committed.Budget]' value='[cleaned_Revenue_data.csv].[Citywide.Committed.Budget]' />
+          <map key='[Citywide.Recognized.Rev.x]' value='[cleaned_Budget_data.csv].[Citywide.Recognized.Rev.x]' />
+          <map key='[Citywide.Recognized.Rev.y]' value='[cleaned_Budget_data.csv].[Citywide.Recognized.Rev.y]' />
+          <map key='[Citywide.Recognized.Rev]' value='[cleaned_Revenue_data.csv].[Citywide.Recognized.Rev]' />
+          <map key='[F1 (cleaned_Revenue_data.csv)]' value='[cleaned_Revenue_data.csv].[F1]' />
+          <map key='[F1]' value='[cleaned_Budget_data.csv].[F1]' />
+          <map key='[FY_CPI.x]' value='[cleaned_Budget_data.csv].[FY_CPI.x]' />
+          <map key='[FY_CPI.y]' value='[cleaned_Budget_data.csv].[FY_CPI.y]' />
+          <map key='[FY_CPI]' value='[cleaned_Revenue_data.csv].[FY_CPI]' />
+          <map key='[Remaining.Budget.x]' value='[cleaned_Budget_data.csv].[Remaining.Budget.x]' />
+          <map key='[Remaining.Budget.y]' value='[cleaned_Budget_data.csv].[Remaining.Budget.y]' />
+          <map key='[Remaining.Budget]' value='[cleaned_Revenue_data.csv].[Remaining.Budget]' />
+          <map key='[Remaining.Citywide.Rev.x]' value='[cleaned_Budget_data.csv].[Remaining.Citywide.Rev.x]' />
+          <map key='[Remaining.Citywide.Rev.y]' value='[cleaned_Budget_data.csv].[Remaining.Citywide.Rev.y]' />
+          <map key='[Remaining.Citywide.Rev]' value='[cleaned_Revenue_data.csv].[Remaining.Citywide.Rev]' />
+          <map key='[V1]' value='[cleaned_Budget_data.csv].[V1]' />
+          <map key='[accrued_expense]' value='[cleaned_Budget_data.csv].[accrued_expense]' />
+          <map key='[actual_expenditure]' value='[cleaned_Budget_data.csv].[actual_expenditure]' />
+          <map key='[adopted (cleaned_Revenue_data.csv)]' value='[cleaned_Revenue_data.csv].[adopted]' />
+          <map key='[adopted]' value='[cleaned_Budget_data.csv].[adopted]' />
+          <map key='[agency (cleaned_Revenue_data.csv)]' value='[cleaned_Revenue_data.csv].[agency]' />
+          <map key='[agency]' value='[cleaned_Budget_data.csv].[agency]' />
+          <map key='[agency_code (cleaned_Revenue_data.csv)]' value='[cleaned_Revenue_data.csv].[agency_code]' />
+          <map key='[agency_code]' value='[cleaned_Budget_data.csv].[agency_code]' />
+          <map key='[agency_recog_rev]' value='[cleaned_Revenue_data.csv].[agency_recog_rev]' />
+          <map key='[agency_total_budget.x]' value='[cleaned_Budget_data.csv].[agency_total_budget.x]' />
+          <map key='[agency_total_budget.y]' value='[cleaned_Budget_data.csv].[agency_total_budget.y]' />
+          <map key='[budget_code]' value='[cleaned_Budget_data.csv].[budget_code]' />
+          <map key='[budget_name]' value='[cleaned_Budget_data.csv].[budget_name]' />
+          <map key='[cash_expense]' value='[cleaned_Budget_data.csv].[cash_expense]' />
+          <map key='[closing_classification_name]' value='[cleaned_Revenue_data.csv].[closing_classification_name]' />
+          <map key='[committed]' value='[cleaned_Budget_data.csv].[committed]' />
+          <map key='[department]' value='[cleaned_Budget_data.csv].[department]' />
+          <map key='[encumbered]' value='[cleaned_Budget_data.csv].[encumbered]' />
+          <map key='[expense_category]' value='[cleaned_Budget_data.csv].[expense_category]' />
+          <map key='[fund_class]' value='[cleaned_Revenue_data.csv].[fund_class]' />
+          <map key='[funding_class]' value='[cleaned_Revenue_data.csv].[funding_class]' />
+          <map key='[modified (cleaned_Revenue_data.csv)]' value='[cleaned_Revenue_data.csv].[modified]' />
+          <map key='[modified]' value='[cleaned_Budget_data.csv].[modified]' />
+          <map key='[post_adjustment]' value='[cleaned_Budget_data.csv].[post_adjustment]' />
+          <map key='[pre_encumbered]' value='[cleaned_Budget_data.csv].[pre_encumbered]' />
+          <map key='[recognized]' value='[cleaned_Revenue_data.csv].[recognized]' />
+          <map key='[revenue_category]' value='[cleaned_Revenue_data.csv].[revenue_category]' />
+          <map key='[revenue_class]' value='[cleaned_Revenue_data.csv].[revenue_class]' />
+          <map key='[revenue_source]' value='[cleaned_Revenue_data.csv].[revenue_source]' />
+          <map key='[year (cleaned_Revenue_data.csv)]' value='[cleaned_Revenue_data.csv].[year]' />
+          <map key='[year]' value='[cleaned_Budget_data.csv].[year]' />
+        </cols>
+        <refresh increment-key='' incremental-updates='false' />
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[cleaned_Revenue_data.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>V1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[V1]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>V1</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>agency</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[agency]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>agency</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[year]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>department</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[department]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>department</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>expense_category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[expense_category]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>expense_category</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>budget_code</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[budget_code]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>budget_code</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>budget_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[budget_name]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>budget_name</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>adopted</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[adopted]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>adopted</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>modified</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[modified]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>modified</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>encumbered</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[encumbered]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>encumbered</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cash_expense</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[cash_expense]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>cash_expense</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pre_encumbered</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[pre_encumbered]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>pre_encumbered</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>post_adjustment</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[post_adjustment]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>post_adjustment</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>accrued_expense</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[accrued_expense]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>accrued_expense</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>committed</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[committed]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>committed</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>agency_code</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[agency_code]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>agency_code</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>actual_expenditure</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[actual_expenditure]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>actual_expenditure</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>agency_total_budget.x</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[agency_total_budget.x]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>agency_total_budget.x</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Citywide.Recognized.Rev.x</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Citywide.Recognized.Rev.x]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>Citywide.Recognized.Rev.x</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Remaining.Citywide.Rev.x</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Remaining.Citywide.Rev.x]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>Remaining.Citywide.Rev.x</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Citywide.Committed.Budget.x</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Citywide.Committed.Budget.x]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>Citywide.Committed.Budget.x</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Remaining.Budget.x</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Remaining.Budget.x]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>Remaining.Budget.x</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FY_CPI.x</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[FY_CPI.x]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>FY_CPI.x</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Adjusted.Total.Recognized.Citywide.Rev.x</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Adjusted.Total.Recognized.Citywide.Rev.x]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>Adjusted.Total.Recognized.Citywide.Rev.x</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Adjusted.Total.Citywide.Committed.Budget.x</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Adjusted.Total.Citywide.Committed.Budget.x]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>Adjusted.Total.Citywide.Committed.Budget.x</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Adjusted.Remaining.Budget.x</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Adjusted.Remaining.Budget.x]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>Adjusted.Remaining.Budget.x</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>agency_total_budget.y</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[agency_total_budget.y]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>agency_total_budget.y</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Citywide.Recognized.Rev.y</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Citywide.Recognized.Rev.y]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>Citywide.Recognized.Rev.y</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Remaining.Citywide.Rev.y</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Remaining.Citywide.Rev.y]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>Remaining.Citywide.Rev.y</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Citywide.Committed.Budget.y</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Citywide.Committed.Budget.y]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>Citywide.Committed.Budget.y</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Remaining.Budget.y</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Remaining.Budget.y]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>Remaining.Budget.y</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FY_CPI.y</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[FY_CPI.y]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>FY_CPI.y</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Adjusted.Total.Recognized.Citywide.Rev.y</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Adjusted.Total.Recognized.Citywide.Rev.y]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>Adjusted.Total.Recognized.Citywide.Rev.y</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Adjusted.Total.Citywide.Committed.Budget.y</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Adjusted.Total.Citywide.Committed.Budget.y]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>Adjusted.Total.Citywide.Committed.Budget.y</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Adjusted.Remaining.Budget.y</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Adjusted.Remaining.Budget.y]</local-name>
+            <parent-name>[cleaned_Budget_data.csv]</parent-name>
+            <remote-alias>Adjusted.Remaining.Budget.y</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1 (cleaned_Revenue_data.csv)]</local-name>
+            <parent-name>[cleaned_Revenue_data.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>agency</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[agency (cleaned_Revenue_data.csv)]</local-name>
+            <parent-name>[cleaned_Revenue_data.csv]</parent-name>
+            <remote-alias>agency</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>revenue_category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[revenue_category]</local-name>
+            <parent-name>[cleaned_Revenue_data.csv]</parent-name>
+            <remote-alias>revenue_category</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>revenue_source</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[revenue_source]</local-name>
+            <parent-name>[cleaned_Revenue_data.csv]</parent-name>
+            <remote-alias>revenue_source</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fund_class</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[fund_class]</local-name>
+            <parent-name>[cleaned_Revenue_data.csv]</parent-name>
+            <remote-alias>fund_class</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>funding_class</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[funding_class]</local-name>
+            <parent-name>[cleaned_Revenue_data.csv]</parent-name>
+            <remote-alias>funding_class</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>revenue_class</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[revenue_class]</local-name>
+            <parent-name>[cleaned_Revenue_data.csv]</parent-name>
+            <remote-alias>revenue_class</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[year (cleaned_Revenue_data.csv)]</local-name>
+            <parent-name>[cleaned_Revenue_data.csv]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>adopted</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[adopted (cleaned_Revenue_data.csv)]</local-name>
+            <parent-name>[cleaned_Revenue_data.csv]</parent-name>
+            <remote-alias>adopted</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>modified</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[modified (cleaned_Revenue_data.csv)]</local-name>
+            <parent-name>[cleaned_Revenue_data.csv]</parent-name>
+            <remote-alias>modified</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>recognized</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[recognized]</local-name>
+            <parent-name>[cleaned_Revenue_data.csv]</parent-name>
+            <remote-alias>recognized</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>closing_classification_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[closing_classification_name]</local-name>
+            <parent-name>[cleaned_Revenue_data.csv]</parent-name>
+            <remote-alias>closing_classification_name</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>agency_code</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[agency_code (cleaned_Revenue_data.csv)]</local-name>
+            <parent-name>[cleaned_Revenue_data.csv]</parent-name>
+            <remote-alias>agency_code</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>agency_recog_rev</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[agency_recog_rev]</local-name>
+            <parent-name>[cleaned_Revenue_data.csv]</parent-name>
+            <remote-alias>agency_recog_rev</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Citywide.Recognized.Rev</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Citywide.Recognized.Rev]</local-name>
+            <parent-name>[cleaned_Revenue_data.csv]</parent-name>
+            <remote-alias>Citywide.Recognized.Rev</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Remaining.Citywide.Rev</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Remaining.Citywide.Rev]</local-name>
+            <parent-name>[cleaned_Revenue_data.csv]</parent-name>
+            <remote-alias>Remaining.Citywide.Rev</remote-alias>
+            <ordinal>51</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Citywide.Committed.Budget</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Citywide.Committed.Budget]</local-name>
+            <parent-name>[cleaned_Revenue_data.csv]</parent-name>
+            <remote-alias>Citywide.Committed.Budget</remote-alias>
+            <ordinal>52</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Remaining.Budget</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Remaining.Budget]</local-name>
+            <parent-name>[cleaned_Revenue_data.csv]</parent-name>
+            <remote-alias>Remaining.Budget</remote-alias>
+            <ordinal>53</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FY_CPI</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[FY_CPI]</local-name>
+            <parent-name>[cleaned_Revenue_data.csv]</parent-name>
+            <remote-alias>FY_CPI</remote-alias>
+            <ordinal>54</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Adjusted.Total.Recognized.Citywide.Rev</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Adjusted.Total.Recognized.Citywide.Rev]</local-name>
+            <parent-name>[cleaned_Revenue_data.csv]</parent-name>
+            <remote-alias>Adjusted.Total.Recognized.Citywide.Rev</remote-alias>
+            <ordinal>55</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Adjusted.Total.Citywide.Committed.Budget</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Adjusted.Total.Citywide.Committed.Budget]</local-name>
+            <parent-name>[cleaned_Revenue_data.csv]</parent-name>
+            <remote-alias>Adjusted.Total.Citywide.Committed.Budget</remote-alias>
+            <ordinal>56</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Adjusted.Remaining.Budget</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Adjusted.Remaining.Budget]</local-name>
+            <parent-name>[cleaned_Revenue_data.csv]</parent-name>
+            <remote-alias>Adjusted.Remaining.Budget</remote-alias>
+            <ordinal>57</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='F1 (cleaned Revenue data.csv)' datatype='integer' name='[F1 (cleaned_Revenue_data.csv)]' role='measure' type='quantitative' />
+      <column caption='FY CPI.x' datatype='real' name='[FY_CPI.x]' role='dimension' type='quantitative' />
+      <column caption='FY CPI.y' datatype='real' name='[FY_CPI.y]' role='dimension' type='quantitative' />
+      <column caption='Fy Cpi' datatype='real' name='[FY_CPI]' role='dimension' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='cleaned_Budget_data.csv' datatype='table' name='[__tableau_internal_object_id__].[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='cleaned_Revenue_data.csv' datatype='table' name='[__tableau_internal_object_id__].[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]' role='measure' type='quantitative' />
+      <column caption='Accrued Expense' datatype='real' name='[accrued_expense]' role='measure' type='quantitative' />
+      <column caption='Actual Expenditure' datatype='real' name='[actual_expenditure]' role='measure' type='quantitative' />
+      <column caption='adopted (cleaned Revenue data.csv)' datatype='string' name='[adopted (cleaned_Revenue_data.csv)]' role='dimension' type='nominal' />
+      <column caption='Adopted' datatype='real' name='[adopted]' role='measure' type='quantitative' />
+      <column caption='agency (cleaned Revenue data.csv)' datatype='string' name='[agency (cleaned_Revenue_data.csv)]' role='dimension' type='nominal' />
+      <column caption='Agency' datatype='string' name='[agency]' role='dimension' type='nominal' />
+      <column caption='agency code (cleaned Revenue data.csv)' datatype='integer' name='[agency_code (cleaned_Revenue_data.csv)]' role='dimension' type='ordinal' />
+      <column caption='Agency Code' datatype='integer' name='[agency_code]' role='dimension' type='ordinal' />
+      <column caption='Agency Recog Rev' datatype='real' name='[agency_recog_rev]' role='measure' type='quantitative' />
+      <column caption='Agency Total Budget.X' datatype='real' name='[agency_total_budget.x]' role='measure' type='quantitative' />
+      <column caption='Agency Total Budget.Y' datatype='real' name='[agency_total_budget.y]' role='measure' type='quantitative' />
+      <column caption='Budget Code' datatype='integer' name='[budget_code]' role='dimension' type='ordinal' />
+      <column caption='Budget Name' datatype='string' name='[budget_name]' role='dimension' type='nominal' />
+      <column caption='Cash Expense' datatype='real' name='[cash_expense]' role='measure' type='quantitative' />
+      <column caption='Closing Classification Name' datatype='string' name='[closing_classification_name]' role='dimension' type='nominal' />
+      <column caption='Committed' datatype='real' name='[committed]' role='measure' type='quantitative' />
+      <column caption='Department' datatype='string' name='[department]' role='dimension' type='nominal' />
+      <column caption='Encumbered' datatype='integer' name='[encumbered]' role='measure' type='quantitative' />
+      <column caption='Expense Category' datatype='string' name='[expense_category]' role='dimension' type='nominal' />
+      <column caption='Fund Class' datatype='string' name='[fund_class]' role='dimension' type='nominal' />
+      <column caption='Funding Class' datatype='string' name='[funding_class]' role='dimension' type='nominal' />
+      <column caption='modified (cleaned Revenue data.csv)' datatype='string' name='[modified (cleaned_Revenue_data.csv)]' role='dimension' type='nominal' />
+      <column caption='Modified' datatype='real' name='[modified]' role='measure' type='quantitative' />
+      <column caption='Post Adjustment' datatype='real' name='[post_adjustment]' role='measure' type='quantitative' />
+      <column caption='Pre Encumbered' datatype='integer' name='[pre_encumbered]' role='measure' type='quantitative' />
+      <column caption='Recognized' datatype='real' name='[recognized]' role='measure' type='quantitative' />
+      <column caption='Revenue Category' datatype='string' name='[revenue_category]' role='dimension' type='nominal' />
+      <column caption='Revenue Class' datatype='string' name='[revenue_class]' role='dimension' type='nominal' />
+      <column caption='Revenue Source' datatype='string' name='[revenue_source]' role='dimension' type='nominal' />
+      <column caption='year (cleaned Revenue data.csv)' datatype='integer' name='[year (cleaned_Revenue_data.csv)]' role='dimension' type='quantitative' />
+      <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='/Users/jennylyu/Documents/My Tableau Repository/Datasources/cleaned_Budget_data.csv+ (Multiple Connections).hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491' table='[Extract].[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+            <relation name='cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491' table='[Extract].[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]' type='table' />
+            <relation name='cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6' table='[Extract].[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]' type='table' />
+          </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+          <cols>
+            <map key='[Adjusted.Remaining.Budget.x]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[Adjusted.Remaining.Budget.x]' />
+            <map key='[Adjusted.Remaining.Budget.y]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[Adjusted.Remaining.Budget.y]' />
+            <map key='[Adjusted.Remaining.Budget]' value='[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6].[Adjusted.Remaining.Budget]' />
+            <map key='[Adjusted.Total.Citywide.Committed.Budget.x]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[Adjusted.Total.Citywide.Committed.Budget.x]' />
+            <map key='[Adjusted.Total.Citywide.Committed.Budget.y]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[Adjusted.Total.Citywide.Committed.Budget.y]' />
+            <map key='[Adjusted.Total.Citywide.Committed.Budget]' value='[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6].[Adjusted.Total.Citywide.Committed.Budget]' />
+            <map key='[Adjusted.Total.Recognized.Citywide.Rev.x]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[Adjusted.Total.Recognized.Citywide.Rev.x]' />
+            <map key='[Adjusted.Total.Recognized.Citywide.Rev.y]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[Adjusted.Total.Recognized.Citywide.Rev.y]' />
+            <map key='[Adjusted.Total.Recognized.Citywide.Rev]' value='[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6].[Adjusted.Total.Recognized.Citywide.Rev]' />
+            <map key='[Citywide.Committed.Budget.x]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[Citywide.Committed.Budget.x]' />
+            <map key='[Citywide.Committed.Budget.y]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[Citywide.Committed.Budget.y]' />
+            <map key='[Citywide.Committed.Budget]' value='[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6].[Citywide.Committed.Budget]' />
+            <map key='[Citywide.Recognized.Rev.x]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[Citywide.Recognized.Rev.x]' />
+            <map key='[Citywide.Recognized.Rev.y]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[Citywide.Recognized.Rev.y]' />
+            <map key='[Citywide.Recognized.Rev]' value='[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6].[Citywide.Recognized.Rev]' />
+            <map key='[F1 (cleaned_Revenue_data.csv)]' value='[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6].[F1]' />
+            <map key='[F1]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[F1]' />
+            <map key='[FY_CPI.x]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[FY_CPI.x]' />
+            <map key='[FY_CPI.y]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[FY_CPI.y]' />
+            <map key='[FY_CPI]' value='[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6].[FY_CPI]' />
+            <map key='[Remaining.Budget.x]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[Remaining.Budget.x]' />
+            <map key='[Remaining.Budget.y]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[Remaining.Budget.y]' />
+            <map key='[Remaining.Budget]' value='[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6].[Remaining.Budget]' />
+            <map key='[Remaining.Citywide.Rev.x]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[Remaining.Citywide.Rev.x]' />
+            <map key='[Remaining.Citywide.Rev.y]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[Remaining.Citywide.Rev.y]' />
+            <map key='[Remaining.Citywide.Rev]' value='[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6].[Remaining.Citywide.Rev]' />
+            <map key='[V1]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[V1]' />
+            <map key='[accrued_expense]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[accrued_expense]' />
+            <map key='[actual_expenditure]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[actual_expenditure]' />
+            <map key='[adopted (cleaned_Revenue_data.csv)]' value='[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6].[adopted]' />
+            <map key='[adopted]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[adopted]' />
+            <map key='[agency (cleaned_Revenue_data.csv)]' value='[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6].[agency]' />
+            <map key='[agency]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[agency]' />
+            <map key='[agency_code (cleaned_Revenue_data.csv)]' value='[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6].[agency_code]' />
+            <map key='[agency_code]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[agency_code]' />
+            <map key='[agency_recog_rev]' value='[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6].[agency_recog_rev]' />
+            <map key='[agency_total_budget.x]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[agency_total_budget.x]' />
+            <map key='[agency_total_budget.y]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[agency_total_budget.y]' />
+            <map key='[budget_code]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[budget_code]' />
+            <map key='[budget_name]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[budget_name]' />
+            <map key='[cash_expense]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[cash_expense]' />
+            <map key='[closing_classification_name]' value='[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6].[closing_classification_name]' />
+            <map key='[committed]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[committed]' />
+            <map key='[department]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[department]' />
+            <map key='[encumbered]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[encumbered]' />
+            <map key='[expense_category]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[expense_category]' />
+            <map key='[fund_class]' value='[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6].[fund_class]' />
+            <map key='[funding_class]' value='[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6].[funding_class]' />
+            <map key='[modified (cleaned_Revenue_data.csv)]' value='[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6].[modified]' />
+            <map key='[modified]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[modified]' />
+            <map key='[post_adjustment]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[post_adjustment]' />
+            <map key='[pre_encumbered]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[pre_encumbered]' />
+            <map key='[recognized]' value='[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6].[recognized]' />
+            <map key='[revenue_category]' value='[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6].[revenue_category]' />
+            <map key='[revenue_class]' value='[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6].[revenue_class]' />
+            <map key='[revenue_source]' value='[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6].[revenue_source]' />
+            <map key='[year (cleaned_Revenue_data.csv)]' value='[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6].[year]' />
+            <map key='[year]' value='[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491].[year]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>F1</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[F1]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>F1</remote-alias>
+              <ordinal>0</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>697154</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>V1</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[V1]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>V1</remote-alias>
+              <ordinal>1</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>697154</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>agency</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[agency]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>agency</remote-alias>
+              <ordinal>2</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[year]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>year</remote-alias>
+              <ordinal>3</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>department</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[department]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>department</remote-alias>
+              <ordinal>4</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>288</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>expense_category</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[expense_category]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>expense_category</remote-alias>
+              <ordinal>5</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>496</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>budget_code</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[budget_code]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>budget_code</remote-alias>
+              <ordinal>6</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>12953</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>budget_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[budget_name]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>budget_name</remote-alias>
+              <ordinal>7</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>17419</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>adopted</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[adopted]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>adopted</remote-alias>
+              <ordinal>8</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>31437</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>modified</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[modified]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>modified</remote-alias>
+              <ordinal>9</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>42742</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>encumbered</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[encumbered]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>encumbered</remote-alias>
+              <ordinal>10</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>cash_expense</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[cash_expense]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>cash_expense</remote-alias>
+              <ordinal>11</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>125797</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>pre_encumbered</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[pre_encumbered]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>pre_encumbered</remote-alias>
+              <ordinal>12</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>post_adjustment</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[post_adjustment]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>post_adjustment</remote-alias>
+              <ordinal>13</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>33543</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>accrued_expense</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[accrued_expense]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>accrued_expense</remote-alias>
+              <ordinal>14</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>9362</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>committed</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[committed]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>committed</remote-alias>
+              <ordinal>15</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>125456</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>agency_code</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[agency_code]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>agency_code</remote-alias>
+              <ordinal>16</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>actual_expenditure</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[actual_expenditure]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>actual_expenditure</remote-alias>
+              <ordinal>17</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>125456</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>agency_total_budget.x</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[agency_total_budget.x]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>agency_total_budget.x</remote-alias>
+              <ordinal>18</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>117</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Citywide.Recognized.Rev.x</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Citywide.Recognized.Rev.x]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>Citywide.Recognized.Rev.x</remote-alias>
+              <ordinal>19</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Remaining.Citywide.Rev.x</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Remaining.Citywide.Rev.x]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>Remaining.Citywide.Rev.x</remote-alias>
+              <ordinal>20</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Citywide.Committed.Budget.x</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Citywide.Committed.Budget.x]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>Citywide.Committed.Budget.x</remote-alias>
+              <ordinal>21</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Remaining.Budget.x</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Remaining.Budget.x]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>Remaining.Budget.x</remote-alias>
+              <ordinal>22</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>FY_CPI.x</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[FY_CPI.x]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>FY_CPI.x</remote-alias>
+              <ordinal>23</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Adjusted.Total.Recognized.Citywide.Rev.x</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Adjusted.Total.Recognized.Citywide.Rev.x]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>Adjusted.Total.Recognized.Citywide.Rev.x</remote-alias>
+              <ordinal>24</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Adjusted.Total.Citywide.Committed.Budget.x</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Adjusted.Total.Citywide.Committed.Budget.x]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>Adjusted.Total.Citywide.Committed.Budget.x</remote-alias>
+              <ordinal>25</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Adjusted.Remaining.Budget.x</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Adjusted.Remaining.Budget.x]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>Adjusted.Remaining.Budget.x</remote-alias>
+              <ordinal>26</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>agency_total_budget.y</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[agency_total_budget.y]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>agency_total_budget.y</remote-alias>
+              <ordinal>27</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>117</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Citywide.Recognized.Rev.y</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Citywide.Recognized.Rev.y]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>Citywide.Recognized.Rev.y</remote-alias>
+              <ordinal>28</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Remaining.Citywide.Rev.y</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Remaining.Citywide.Rev.y]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>Remaining.Citywide.Rev.y</remote-alias>
+              <ordinal>29</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Citywide.Committed.Budget.y</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Citywide.Committed.Budget.y]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>Citywide.Committed.Budget.y</remote-alias>
+              <ordinal>30</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Remaining.Budget.y</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Remaining.Budget.y]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>Remaining.Budget.y</remote-alias>
+              <ordinal>31</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>FY_CPI.y</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[FY_CPI.y]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>FY_CPI.y</remote-alias>
+              <ordinal>32</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Adjusted.Total.Recognized.Citywide.Rev.y</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Adjusted.Total.Recognized.Citywide.Rev.y]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>Adjusted.Total.Recognized.Citywide.Rev.y</remote-alias>
+              <ordinal>33</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Adjusted.Total.Citywide.Committed.Budget.y</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Adjusted.Total.Citywide.Committed.Budget.y]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>Adjusted.Total.Citywide.Committed.Budget.y</remote-alias>
+              <ordinal>34</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Adjusted.Remaining.Budget.y</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Adjusted.Remaining.Budget.y]</local-name>
+              <parent-name>[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]</parent-name>
+              <remote-alias>Adjusted.Remaining.Budget.y</remote-alias>
+              <ordinal>35</ordinal>
+              <family>cleaned_Budget_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>F1</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[F1 (cleaned_Revenue_data.csv)]</local-name>
+              <parent-name>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</parent-name>
+              <remote-alias>F1</remote-alias>
+              <ordinal>36</ordinal>
+              <family>cleaned_Revenue_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>914146</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>agency</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[agency (cleaned_Revenue_data.csv)]</local-name>
+              <parent-name>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</parent-name>
+              <remote-alias>agency</remote-alias>
+              <ordinal>37</ordinal>
+              <family>cleaned_Revenue_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>revenue_category</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[revenue_category]</local-name>
+              <parent-name>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</parent-name>
+              <remote-alias>revenue_category</remote-alias>
+              <ordinal>38</ordinal>
+              <family>cleaned_Revenue_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>revenue_source</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[revenue_source]</local-name>
+              <parent-name>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</parent-name>
+              <remote-alias>revenue_source</remote-alias>
+              <ordinal>39</ordinal>
+              <family>cleaned_Revenue_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1167</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>fund_class</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[fund_class]</local-name>
+              <parent-name>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</parent-name>
+              <remote-alias>fund_class</remote-alias>
+              <ordinal>40</ordinal>
+              <family>cleaned_Revenue_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>funding_class</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[funding_class]</local-name>
+              <parent-name>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</parent-name>
+              <remote-alias>funding_class</remote-alias>
+              <ordinal>41</ordinal>
+              <family>cleaned_Revenue_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>revenue_class</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[revenue_class]</local-name>
+              <parent-name>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</parent-name>
+              <remote-alias>revenue_class</remote-alias>
+              <ordinal>42</ordinal>
+              <family>cleaned_Revenue_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>71</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[year (cleaned_Revenue_data.csv)]</local-name>
+              <parent-name>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</parent-name>
+              <remote-alias>year</remote-alias>
+              <ordinal>43</ordinal>
+              <family>cleaned_Revenue_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>adopted</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[adopted (cleaned_Revenue_data.csv)]</local-name>
+              <parent-name>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</parent-name>
+              <remote-alias>adopted</remote-alias>
+              <ordinal>44</ordinal>
+              <family>cleaned_Revenue_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6749</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>modified</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[modified (cleaned_Revenue_data.csv)]</local-name>
+              <parent-name>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</parent-name>
+              <remote-alias>modified</remote-alias>
+              <ordinal>45</ordinal>
+              <family>cleaned_Revenue_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>17141</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>recognized</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[recognized]</local-name>
+              <parent-name>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</parent-name>
+              <remote-alias>recognized</remote-alias>
+              <ordinal>46</ordinal>
+              <family>cleaned_Revenue_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>104171</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>closing_classification_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[closing_classification_name]</local-name>
+              <parent-name>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</parent-name>
+              <remote-alias>closing_classification_name</remote-alias>
+              <ordinal>47</ordinal>
+              <family>cleaned_Revenue_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>agency_code</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[agency_code (cleaned_Revenue_data.csv)]</local-name>
+              <parent-name>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</parent-name>
+              <remote-alias>agency_code</remote-alias>
+              <ordinal>48</ordinal>
+              <family>cleaned_Revenue_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>agency_recog_rev</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[agency_recog_rev]</local-name>
+              <parent-name>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</parent-name>
+              <remote-alias>agency_recog_rev</remote-alias>
+              <ordinal>49</ordinal>
+              <family>cleaned_Revenue_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>193</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Citywide.Recognized.Rev</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Citywide.Recognized.Rev]</local-name>
+              <parent-name>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</parent-name>
+              <remote-alias>Citywide.Recognized.Rev</remote-alias>
+              <ordinal>50</ordinal>
+              <family>cleaned_Revenue_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Remaining.Citywide.Rev</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Remaining.Citywide.Rev]</local-name>
+              <parent-name>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</parent-name>
+              <remote-alias>Remaining.Citywide.Rev</remote-alias>
+              <ordinal>51</ordinal>
+              <family>cleaned_Revenue_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Citywide.Committed.Budget</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Citywide.Committed.Budget]</local-name>
+              <parent-name>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</parent-name>
+              <remote-alias>Citywide.Committed.Budget</remote-alias>
+              <ordinal>52</ordinal>
+              <family>cleaned_Revenue_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Remaining.Budget</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Remaining.Budget]</local-name>
+              <parent-name>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</parent-name>
+              <remote-alias>Remaining.Budget</remote-alias>
+              <ordinal>53</ordinal>
+              <family>cleaned_Revenue_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>FY_CPI</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[FY_CPI]</local-name>
+              <parent-name>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</parent-name>
+              <remote-alias>FY_CPI</remote-alias>
+              <ordinal>54</ordinal>
+              <family>cleaned_Revenue_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Adjusted.Total.Recognized.Citywide.Rev</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Adjusted.Total.Recognized.Citywide.Rev]</local-name>
+              <parent-name>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</parent-name>
+              <remote-alias>Adjusted.Total.Recognized.Citywide.Rev</remote-alias>
+              <ordinal>55</ordinal>
+              <family>cleaned_Revenue_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Adjusted.Total.Citywide.Committed.Budget</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Adjusted.Total.Citywide.Committed.Budget]</local-name>
+              <parent-name>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</parent-name>
+              <remote-alias>Adjusted.Total.Citywide.Committed.Budget</remote-alias>
+              <ordinal>56</ordinal>
+              <family>cleaned_Revenue_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Adjusted.Remaining.Budget</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Adjusted.Remaining.Budget]</local-name>
+              <parent-name>[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]</parent-name>
+              <remote-alias>Adjusted.Remaining.Budget</remote-alias>
+              <ordinal>57</ordinal>
+              <family>cleaned_Revenue_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='cleaned_Budget_data.csv' id='cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491'>
+            <properties context=''>
+              <relation connection='textscan.0ncd57x1gj9ve218t3tm71b9tlso' name='cleaned_Budget_data.csv' table='[cleaned_Budget_data#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='F1' ordinal='0' />
+                  <column datatype='integer' name='V1' ordinal='1' />
+                  <column datatype='string' name='agency' ordinal='2' />
+                  <column datatype='integer' name='year' ordinal='3' />
+                  <column datatype='string' name='department' ordinal='4' />
+                  <column datatype='string' name='expense_category' ordinal='5' />
+                  <column datatype='integer' name='budget_code' ordinal='6' />
+                  <column datatype='string' name='budget_name' ordinal='7' />
+                  <column datatype='real' name='adopted' ordinal='8' />
+                  <column datatype='real' name='modified' ordinal='9' />
+                  <column datatype='integer' name='encumbered' ordinal='10' />
+                  <column datatype='real' name='cash_expense' ordinal='11' />
+                  <column datatype='integer' name='pre_encumbered' ordinal='12' />
+                  <column datatype='real' name='post_adjustment' ordinal='13' />
+                  <column datatype='real' name='accrued_expense' ordinal='14' />
+                  <column datatype='real' name='committed' ordinal='15' />
+                  <column datatype='integer' name='agency_code' ordinal='16' />
+                  <column datatype='real' name='actual_expenditure' ordinal='17' />
+                  <column datatype='real' name='agency_total_budget.x' ordinal='18' />
+                  <column datatype='real' name='Citywide.Recognized.Rev.x' ordinal='19' />
+                  <column datatype='real' name='Remaining.Citywide.Rev.x' ordinal='20' />
+                  <column datatype='real' name='Citywide.Committed.Budget.x' ordinal='21' />
+                  <column datatype='integer' name='Remaining.Budget.x' ordinal='22' />
+                  <column datatype='real' name='FY_CPI.x' ordinal='23' />
+                  <column datatype='integer' name='Adjusted.Total.Recognized.Citywide.Rev.x' ordinal='24' />
+                  <column datatype='integer' name='Adjusted.Total.Citywide.Committed.Budget.x' ordinal='25' />
+                  <column datatype='real' name='Adjusted.Remaining.Budget.x' ordinal='26' />
+                  <column datatype='real' name='agency_total_budget.y' ordinal='27' />
+                  <column datatype='real' name='Citywide.Recognized.Rev.y' ordinal='28' />
+                  <column datatype='real' name='Remaining.Citywide.Rev.y' ordinal='29' />
+                  <column datatype='real' name='Citywide.Committed.Budget.y' ordinal='30' />
+                  <column datatype='integer' name='Remaining.Budget.y' ordinal='31' />
+                  <column datatype='real' name='FY_CPI.y' ordinal='32' />
+                  <column datatype='integer' name='Adjusted.Total.Recognized.Citywide.Rev.y' ordinal='33' />
+                  <column datatype='integer' name='Adjusted.Total.Citywide.Committed.Budget.y' ordinal='34' />
+                  <column datatype='real' name='Adjusted.Remaining.Budget.y' ordinal='35' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491' table='[Extract].[cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491]' type='table' />
+            </properties>
+          </object>
+          <object caption='cleaned_Revenue_data.csv' id='cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6'>
+            <properties context=''>
+              <relation connection='textscan.15l0wzb1phx03z16pnhux0v4yghx' name='cleaned_Revenue_data.csv' table='[cleaned_Revenue_data#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='F1' ordinal='0' />
+                  <column datatype='string' name='agency' ordinal='1' />
+                  <column datatype='string' name='revenue_category' ordinal='2' />
+                  <column datatype='string' name='revenue_source' ordinal='3' />
+                  <column datatype='string' name='fund_class' ordinal='4' />
+                  <column datatype='string' name='funding_class' ordinal='5' />
+                  <column datatype='string' name='revenue_class' ordinal='6' />
+                  <column datatype='integer' name='year' ordinal='7' />
+                  <column datatype='string' name='adopted' ordinal='8' />
+                  <column datatype='string' name='modified' ordinal='9' />
+                  <column datatype='real' name='recognized' ordinal='10' />
+                  <column datatype='string' name='closing_classification_name' ordinal='11' />
+                  <column datatype='integer' name='agency_code' ordinal='12' />
+                  <column datatype='real' name='agency_recog_rev' ordinal='13' />
+                  <column datatype='real' name='Citywide.Recognized.Rev' ordinal='14' />
+                  <column datatype='real' name='Remaining.Citywide.Rev' ordinal='15' />
+                  <column datatype='real' name='Citywide.Committed.Budget' ordinal='16' />
+                  <column datatype='integer' name='Remaining.Budget' ordinal='17' />
+                  <column datatype='real' name='FY_CPI' ordinal='18' />
+                  <column datatype='integer' name='Adjusted.Total.Recognized.Citywide.Rev' ordinal='19' />
+                  <column datatype='integer' name='Adjusted.Total.Citywide.Committed.Budget' ordinal='20' />
+                  <column datatype='real' name='Adjusted.Remaining.Budget' ordinal='21' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6' table='[Extract].[cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[agency_code]' />
+                <expression op='[agency_code (cleaned_Revenue_data.csv)]' />
+              </expression>
+              <expression op='='>
+                <expression op='[year]' />
+                <expression op='[year (cleaned_Revenue_data.csv)]' />
+              </expression>
+            </expression>
+            <first-end-point object-id='cleaned_Budget_data.csv_2ECA0E73FF4741598F10359FA3216491' />
+            <second-end-point object-id='cleaned_Revenue_data.csv_461CB86A475D4C71B63AB3AE68C27FB6' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{4F66D4F0-C37A-4DD6-8433-286C0865DB85}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='main'>
+      <style />
+      <size maxheight='768' maxwidth='1024' minheight='768' minwidth='1024' preset-index='2' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='17' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='97916' id='16' param='horz' type-v2='layout-flow' w='98438' x='781' y='1042'>
+            <zone h='97916' id='15' type-v2='layout-basic' w='98438' x='781' y='1042'>
+              <zone h='58959' id='4' param='vert' type-v2='layout-flow' w='40489' x='5800' y='17549'>
+                <zone h='4818' id='21' type-v2='text' w='40489' x='5800' y='17549'>
+                  <formatted-text>
+                    <run fontsize='16'>This is the New Dashboard</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='54141' id='3' type-v2='empty' w='40489' x='5800' y='22367'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone h='88636' id='8' is-fixed='true' type-v2='layout-basic' w='44282' x='54937' y='10322'>
+                <zone h='88636' id='7' param='vert' type-v2='layout-flow' w='44282' x='54937' y='10322'>
+                  <zone fixed-size='53' forceUpdate='true' h='7943' id='5' is-fixed='true' type-v2='text' w='44282' x='54937' y='10322'>
+                    <formatted-text>
+                      <run bold='true' fontalignment='1' fontcolor='#0058a8' fontname='Tableau Semibold' fontsize='16'> Budget Expenditure</run>
+                    </formatted-text>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone fixed-size='488' h='64584' id='6' is-fixed='true' type-v2='empty' w='44282' x='54937' y='18265'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                </zone>
+              </zone>
+              <zone forceUpdate='true' h='9280' id='9' type-v2='text' w='80669' x='18550' y='1042'>
+                <formatted-text>
+                  <run bold='true' fontcolor='#ffffff' fontsize='20'>NYC Funds Tracker</run>
+                  <run>Æ&#10;</run>
+                  <run bold='true' fontcolor='#fbaa25' fontsize='16'>Where does the money come from, and where does the money go ?</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='0' />
+                  <format attr='background-color' value='#2356a2' />
+                </zone-style>
+              </zone>
+              <zone forceUpdate='true' h='7227' id='10' type-v2='text' w='45508' x='781' y='10322'>
+                <formatted-text>
+                  <run bold='true' fontalignment='1' fontcolor='#0058a8' fontname='Tableau Semibold' fontsize='16'>Revenue</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='81409' id='11' type-v2='empty' w='5019' x='781' y='17549'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='22450' id='12' type-v2='empty' w='40489' x='5800' y='76508'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='88636' id='13' type-v2='empty' w='8648' x='46289' y='10322'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='9280' id='14' is-scaled='1' param='/var/folders/gp/cwh_91yn4mvdmmnq60fq4v140000gn/T/tableau-temp/0ts1htf1du9vgv16qkc5d1wb39p2/Sheets3/Image/fpwa-blue.png' type-v2='bitmap' w='17769' x='781' y='1042'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='0' />
+                  <format attr='background-color' value='#2356a2' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+            <format attr='background-color' value='#ffffff' />
+          </zone-style>
+        </zone>
+        <zone forceUpdate='true' h='4036' id='18' type-v2='text' w='33105' x='10547' y='67578'>
+          <formatted-text>
+            <run fontcolor='#1b1b1b' fontsize='10' italic='true'>Click below to learn more about</run>
+            <run fontcolor='#000000' fontsize='10' italic='true'>Æ </run>
+            <run fontcolor='#1b1b1b' fontname='Helvetica' fontsize='10' italic='true'>NYC revenue</run>
+            <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='10' italic='true'>Æ </run>
+          </formatted-text>
+        </zone>
+        <zone fixed-size='33' forceUpdate='true' h='3776' id='19' is-fixed='true' type-v2='text' w='38281' x='57813' y='67578'>
+          <formatted-text>
+            <run fontcolor='#1b1b1b' fontsize='10' italic='true'>Click below to learn more about</run>
+            <run fontcolor='#000000' fontsize='10' italic='true'>Æ </run>
+            <run bold='true' fontcolor='#1b1b1b' fontsize='10' italic='true'>NYC budget expenditure</run>
+            <run bold='true' fontcolor='#000000' fontsize='10' italic='true'>Æ </run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' h='4427' id='20' type-v2='text' w='25391' x='10742' y='86458'>
+          <formatted-text>
+            <run fontcolor='#000000' fontsize='10' italic='true'>External links to our data and reports:</run>
+          </formatted-text>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='35' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97916' id='34' param='vert' type-v2='layout-flow' w='98438' x='781' y='1042'>
+                <zone fixed-size='71' h='9280' id='14' is-fixed='true' is-scaled='1' param='/var/folders/gp/cwh_91yn4mvdmmnq60fq4v140000gn/T/tableau-temp/0ts1htf1du9vgv16qkc5d1wb39p2/Sheets3/Image/fpwa-blue.png' type-v2='bitmap' w='17769' x='781' y='1042'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#2356a2' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='9280' id='9' type-v2='text' w='80669' x='18550' y='1042'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#ffffff' fontsize='20'>NYC Funds Tracker</run>
+                    <run>Æ&#10;</run>
+                    <run bold='true' fontcolor='#fbaa25' fontsize='16'>Where does the money come from, and where does the money go ?</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#2356a2' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='7227' id='10' type-v2='text' w='45508' x='781' y='10322'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontcolor='#0058a8' fontname='Tableau Semibold' fontsize='16'>Revenue</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='53' forceUpdate='true' h='7943' id='5' type-v2='text' w='44282' x='54937' y='10322'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontcolor='#0058a8' fontname='Tableau Semibold' fontsize='16'> Budget Expenditure</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='4818' id='21' type-v2='text' w='40489' x='5800' y='17549'>
+                  <formatted-text>
+                    <run fontsize='16'>This is the New Dashboard</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='4036' id='18' type-v2='text' w='33105' x='10547' y='67578'>
+                  <formatted-text>
+                    <run fontcolor='#1b1b1b' fontsize='10' italic='true'>Click below to learn more about</run>
+                    <run fontcolor='#000000' fontsize='10' italic='true'>Æ </run>
+                    <run fontcolor='#1b1b1b' fontname='Helvetica' fontsize='10' italic='true'>NYC revenue</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='10' italic='true'>Æ </run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='33' forceUpdate='true' h='3776' id='19' type-v2='text' w='38281' x='57813' y='67578'>
+                  <formatted-text>
+                    <run fontcolor='#1b1b1b' fontsize='10' italic='true'>Click below to learn more about</run>
+                    <run fontcolor='#000000' fontsize='10' italic='true'>Æ </run>
+                    <run bold='true' fontcolor='#1b1b1b' fontsize='10' italic='true'>NYC budget expenditure</run>
+                    <run bold='true' fontcolor='#000000' fontsize='10' italic='true'>Æ </run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='4427' id='20' type-v2='text' w='25391' x='10742' y='86458'>
+                  <formatted-text>
+                    <run fontcolor='#000000' fontsize='10' italic='true'>External links to our data and reports:</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+                <format attr='background-color' value='#ffffff' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{FF404326-2484-41E2-9425-B5AA7FFF64EA}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{83662403-5A50-450B-B0D9-EB4D7B399769}' />
+    </window>
+    <window class='dashboard' maximized='true' name='main'>
+      <viewpoints />
+      <active id='6' />
+      <simple-id uuid='{A3677DA8-9794-4A5C-B519-A1BE23482252}' />
+    </window>
+  </windows>
+</workbook>

@@ -2,6 +2,7 @@
 library(tidyverse)
 library(data.table)
 library(RCurl)
+library(xlsx)
 # 068- Administration for Children's Services; 260-Department of Youth and Community Development;
 # 125-Department for the Aging; 069-Department of Social Services;806-Housing Preservation and Development;
 # 071-Department of Homeless Services; 816-Department of Health and Mental Hygiene;801-Department of Small Business Services
@@ -26,10 +27,9 @@ Budget_data <- left_join(Budget_data,agency_code_dataframe,by="agency")
 #Citywide_data <- read.csv("https://raw.githubusercontent.com/ZoeyyyLyu/NYC_Fund_Tracker/main/Raw%20Data/Citywide_Revenue.xlsx")
 Citywide_data <- read.csv("~/Desktop/NYC_Fund_Tracker/RawData/Citywide_Data.csv")
 Citywide_data <- Citywide_data %>%
-  dplyr::select(-Revenue.Category,-Recognized.Categorical.Citywide.Rev,-Remaining.Categorical.Citywide.Rev,-Path,
-                -Adjusted.Recognized.Categorical.Citywide.Rev)%>%
+  dplyr::select(year,Total.Citywide.Rev,Total.Citywide.Budget,FY_CPI,Adjusted.Total.Citywide.Rev,
+                Adjusted.Total.Citywide.Budget)%>%
   distinct()
-
 
 # calculate Intra-city sales
 intra_city_sales <- Revenue_data %>%
@@ -47,46 +47,52 @@ Prior_payable <- Prior_payable %>%
 Prior_payable <-left_join(Prior_payable,agency_code_dataframe,by=c("agency"))
 Prior_payable <- Prior_payable %>% dplyr::select(-agency)   
 
-###############################
-###### Citywide Revenue  ######
-###############################
-Citywide_rev <-
-  list.files(path = "~/Desktop/NYC_Fund_Tracker/RawData/Raw Data - Citywide Rev/",
-             pattern = "\\.csv$",
-             full.names = T) %>%
-  map_df(~read_csv(., col_types = cols(.default = "c")))
-Citywide_rev$Recognized <- as.numeric(Citywide_rev$Recognized)
-
-# calculate Prior Receivables
-Prior_Receivables <-Citywide_rev %>%
-  filter(`Fiscal Year`==2022 )%>%
-  filter(`Closing Classification Name` == "Accounts Left In Old Year") %>%
-  filter(`Funding Class` !="INTRA-CITY SALES")%>%
-  filter(`Funding Class` !="CAPITAL FUNDS - I.F.A.")%>%
-  group_by(`Revenue Category`)%>%
-  summarise(sum_recognize=sum(Recognized,na.rm = T))
-
-Citywide_rev_summary<- Citywide_rev %>%
-  filter(`Fiscal Year`==2022)%>%
-  filter(`Closing Classification Name` != "Collected Unearned Revenue Roll" &
-           `Closing Classification Name` != "Accounts Left In Old Year")  %>%
-  filter(`Funding Class` !="INTRA-CITY SALES")%>%
-  filter(`Funding Class` !="CAPITAL FUNDS - I.F.A.")%>%
-  #filter(`Revenue Category`=="Non-Governmental Grants")%>%
-  filter(`Fiscal Year`<=2023 & `Fiscal Year`>=2011) %>%
-  #group_by(`Revenue Category`,`Fiscal Year`)%>%
-  group_by(`Revenue Category`)%>%
-  summarise(sum_recognize=sum(Recognized,na.rm = T))
-colnames(Citywide_rev_summary) <- c("Revenue_Category","Recognized")
-colnames(Prior_Receivables) <- c("Revenue_Category","Prior_Receivable")
-Citywide_rev_summary <- left_join(Citywide_rev_summary,Prior_Receivables,by="Revenue_Category")
-Citywide_rev_summary$Recognized+Citywide_rev_summary$Prior_Receivable
-
-Citywide_rev %>%
-  filter(`Fiscal Year`==2023)
-
-#write.csv(Citywide_rev_summary,"~/Desktop/table.csv")
-
+# ###############################
+# ###### Citywide Revenue  ######
+# ###############################
+# 
+# #11848827000-2348434311-867.67*1000000
+# 
+# Citywide_rev <-
+#   list.files(path = "~/Desktop/NYC_Fund_Tracker/RawData/Raw Data - Citywide Rev/",
+#              pattern = "\\.csv$",
+#              full.names = T) %>%
+#   map_df(~read_csv(., col_types = cols(.default = "c")))
+# Citywide_rev$Recognized <- as.numeric(Citywide_rev$Recognized)
+# 
+# Citywide_rev %>% filter(`Closing Classification Name` != "Collected Unearned Revenue Roll" &
+#                           `Closing Classification Name` != "Accounts Left In Old Year")  %>%
+#   filter(`Funding Class`=="INTRA-CITY SALES")%>%
+#   filter(`Fiscal Year`=="2023")%>%
+#   summarise(sum(Recognized,na.rm=T))
+# 
+# # # calculate Prior Receivables
+# # Prior_Receivables <-Citywide_rev %>%
+# #   #filter(`Fiscal Year`==2022 )%>%
+# #   filter(`Closing Classification Name` == "Accounts Left In Old Year") %>%
+# #   filter(`Funding Class` !="INTRA-CITY SALES")%>%
+# #   filter(`Funding Class` !="CAPITAL FUNDS - I.F.A.")%>%
+# #   group_by(`Revenue Category`,`Fiscal Year`)%>%
+# #   summarise(sum_recognize=sum(Recognized,na.rm = T))
+# 
+# Citywide_rev_summary<- Citywide_rev %>%
+#   #filter(`Fiscal Year`==2022)%>%
+#   filter(`Closing Classification Name` != "Collected Unearned Revenue Roll" &
+#            `Closing Classification Name` != "Accounts Left In Old Year")  %>%
+#   filter(`Funding Class` !="INTRA-CITY SALES")%>%
+#   filter(`Funding Class` !="CAPITAL FUNDS - I.F.A.")%>%
+#   #filter(`Revenue Category`=="Non-Governmental Grants")%>%
+#   filter(`Fiscal Year`<=2023 & `Fiscal Year`>=2011) %>%
+#   #group_by(`Revenue Category`,`Fiscal Year`)%>%
+#   group_by(`Revenue Category`,`Fiscal Year`)%>%
+#   summarise(sum_recognize=sum(Recognized,na.rm = T))
+# colnames(Citywide_rev_summary) <- c("Revenue_Category","year","Recognized")
+# # colnames(Prior_Receivables) <- c("Revenue_Category","year","Prior_Receivable")
+# # Citywide_rev_summary <- left_join(Citywide_rev_summary,Prior_Receivables,by=c("Revenue_Category","year"))
+# # Citywide_rev_summary$Recognized+Citywide_rev_summary$Prior_Receivable
+# 
+# #write.csv(Citywide_rev_summary,"~/Desktop/table.csv")
+# 
 
 ###############################
 #### Human Service Revenue  ###
@@ -111,7 +117,7 @@ Revenue_data <- Revenue_data %>%
   rename("year" = "fiscal_year")
 Revenue_data <- left_join(Revenue_data,Citywide_data,by=c("year"))
 
-write.csv(Revenue_data,"~/Desktop/cleaned_Revenue_data.csv")
+#write.csv(Revenue_data,"~/Desktop/cleaned_Revenue_data.csv")
 
 
 ###############################
@@ -129,7 +135,7 @@ agency_Budget_summary <- Budget_data %>%
   summarise(agency_total_budget=sum(actual_expenditure,na.rm=T))
 agency_Budget_summary <- left_join(agency_Budget_summary,Prior_payable,by=c("agency_code","year"))
 agency_Budget_summary <- left_join(agency_Budget_summary,intra_city_sales,by=c("agency_code","year"))
-# total budget expenditure for the agency=  sum(Actual Expenditure)- intra city sales- prior payable
+# library("xlsx")
 agency_Budget_summary$agency_total_budget <- agency_Budget_summary$agency_total_budget-agency_Budget_summary$intracity_sales-
   agency_Budget_summary$Prior.Payable
 agency_Budget_summary <- agency_Budget_summary%>% dplyr:: select(-Prior.Payable, -intracity_sales)
@@ -138,13 +144,12 @@ Budget_data <- left_join(Budget_data,agency_Budget_summary,by=c("agency_code","y
 
 Budget_data <- left_join(Budget_data,Citywide_data,by=c("year"))
 
-write.csv(Budget_data,"~/Desktop/cleaned_Budget_data.csv")
-
+#write.csv(Budget_data,"~/Desktop/cleaned_Budget_data.csv")
+# write.xlsx(Budget_data, "~/Desktop/cleaned_Budget_data.xlsx", sheetName = "Sheet1", 
+#            col.names = TRUE, row.names = TRUE, append = FALSE)
 
 
 # match the rsc to the rev dataset. 
 # compare cb and acfr for all years.
 # save cb citywide revenue and matched it to revenue
 # comapre the cb expenditure 
-
-  
