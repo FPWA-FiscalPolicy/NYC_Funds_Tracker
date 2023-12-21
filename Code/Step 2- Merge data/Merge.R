@@ -39,4 +39,3 @@ for (i in agencies_code){
   }
 }
 write.csv(raw_budget,"~/Desktop/raw_budget.csv")
-

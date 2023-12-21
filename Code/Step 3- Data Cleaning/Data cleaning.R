@@ -26,6 +26,15 @@ Budget_data <- left_join(Budget_data,agency_code_dataframe,by="agency")
 # read Citywide budget and revenue data
 #Citywide_data <- read.csv("https://raw.githubusercontent.com/ZoeyyyLyu/NYC_Fund_Tracker/main/Raw%20Data/Citywide_Revenue.xlsx")
 Citywide_data <- read.csv("~/Desktop/NYC_Fund_Tracker/RawData/Citywide_Data.csv")
+Citywide_federal_grant <- Citywide_data %>%
+  filter(Revenue.Category=="Federal Grants and Contracts-Categorical" )%>%
+  group_by(year)%>%
+  summarize(citywide_federal=sum(as.numeric(Categorical.Citywide.Rev)/2,na.rm = T))
+Citywide_state_grant <- Citywide_data %>%
+  filter(Revenue.Category=="State Grants and Contracts-Categorical" )%>%
+  group_by(year)%>%
+  summarize(citywide_state=sum(as.numeric(Categorical.Citywide.Rev)/2,na.rm = T))
+
 Citywide_data <- Citywide_data %>%
   dplyr::select(year,Total.Citywide.Rev,Total.Citywide.Budget,FY_CPI,Adjusted.Total.Citywide.Rev,
                 Adjusted.Total.Citywide.Budget)%>%
@@ -116,6 +125,22 @@ Revenue_data <- left_join(Revenue_data,agency_revenue,by=c("agency_code","fiscal
 Revenue_data <- Revenue_data %>% 
   rename("year" = "fiscal_year")
 Revenue_data <- left_join(Revenue_data,Citywide_data,by=c("year"))
+Revenue_data <- left_join(Revenue_data,Citywide_federal_grant,by=c("year"))
+Revenue_data <- left_join(Revenue_data,Citywide_state_grant,by=c("year"))
+
+Revenue_data %>% filter(year=="2023") %>% group_by(funding_class) %>% summarise(sum(recognized))
+
+CPI_23 <- 299.6855
+Revenue_data <-  Revenue_data %>%
+  mutate(Adjusted.recognized=recognized*299.6855/FY_CPI,
+         Adjusted.agency_recog_rev=agency_recog_rev*299.6855/FY_CPI,
+         Adjusted.citywide_federal=citywide_federal*299.6855/FY_CPI,
+         Adjusted.citywide_state=citywide_state*299.6855/FY_CPI)
+
+Revenue_data$revenue_source <- str_to_title(Revenue_data$revenue_source) 
+Revenue_data$funding_class <- str_to_title(Revenue_data$funding_class) 
+Revenue_data$revenue_class <- str_to_title(Revenue_data$revenue_class) 
+
 
 #write.csv(Revenue_data,"~/Desktop/cleaned_Revenue_data.csv")
 
@@ -139,17 +164,43 @@ agency_Budget_summary <- left_join(agency_Budget_summary,intra_city_sales,by=c("
 agency_Budget_summary$agency_total_budget <- agency_Budget_summary$agency_total_budget-agency_Budget_summary$intracity_sales-
   agency_Budget_summary$Prior.Payable
 agency_Budget_summary <- agency_Budget_summary%>% dplyr:: select(-Prior.Payable, -intracity_sales)
-
 Budget_data <- left_join(Budget_data,agency_Budget_summary,by=c("agency_code","year"))
 
-Budget_data <- left_join(Budget_data,Citywide_data,by=c("year"))
+HS_budget_summary <- agency_Budget_summary%>%
+  group_by(year)%>%
+  summarize(HS_budget=sum(agency_total_budget))
 
-#write.csv(Budget_data,"~/Desktop/cleaned_Budget_data.csv")
+citywide_budget <- Citywide_data%>%
+  select (year,Total.Citywide.Budget)
+
+HS_budget_summary <- left_join(HS_budget_summary,citywide_budget,by=c("year"))
+# Others <- HS_budget_summary %>%
+#  mutate(Other_Agencies=Total.Citywide.Budget-HS_budget) %>%
+# select(year,agency_total_budget=Other_Agencies)
+# 
+# Others <-left_join(Others,Citywide_data,by=c("year"))
+# Others <-Others%>%
+#   mutate(Adjusted.agency_total_budget=agency_total_budget*299.6855/FY_CPI)
+
+Budget_data <- left_join(Budget_data,Citywide_data,by=c("year"))
+CPI_23 <- 299.6855
+Budget_data <-  Budget_data %>%
+  mutate(Adjusted.actual_expenditure=actual_expenditure*299.6855/FY_CPI,
+         Adjusted.agency_total_budget=agency_total_budget*299.6855/FY_CPI,
+         Path=0)
+
+Other_Agencies <- fread("~/Desktop/NYC_Fund_Tracker/RawData/Other_Agencies_Budget.csv")
+Budget_data <- rbind(Budget_data,Other_Agencies)
+
+Budget_data2 <- Budget_data %>%
+  mutate(Path=200)
+
+Budget_data <- rbind(Budget_data,Budget_data2)
+
+  
+write.csv(Budget_data,"~/Desktop/cleaned_Budget_data.csv")
+
 # write.xlsx(Budget_data, "~/Desktop/cleaned_Budget_data.xlsx", sheetName = "Sheet1", 
 #            col.names = TRUE, row.names = TRUE, append = FALSE)
 
 
-# match the rsc to the rev dataset. 
-# compare cb and acfr for all years.
-# save cb citywide revenue and matched it to revenue
-# comapre the cb expenditure 
