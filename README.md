@@ -1,4 +1,4 @@
-# NYC Fund Tracker
+# NYC Funds Tracker
 
 ### [Click here to NYC Funds Tracker dashboard]( https://public.tableau.com/app/profile/fpwa/viz/NYCFundsTracker_16952193064350/main2?publish=yes)
 
