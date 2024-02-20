@@ -13,7 +13,7 @@
 
 
 ## Data Process:
-### **Step 1 - Download Data** :
+### **Step 1 - Data Extraction** :
    - Use API calls to retrieve data from checkbook NYC.
    - Details can be found in [Read Me Before Downloading.md](https://github.com/FPWA-FiscalPolicy/NYC_Funds_Tracker/blob/main/Code/Step%201%20-Download%20data/Read%20me%20before%20downloading.md).
 ### **Step 2 - Merge Data**:
@@ -24,7 +24,6 @@
 ### **Step 4 - Data Validation**:
    - We match our dashboard data with the records from Annual Comprehensive Financial Report (ACFR)​ \[Tables: G2; G3; G5.​\]
    - Data Validation Sources: [ACFR](https://github.com/FPWA-FiscalPolicy/NYC_Funds_Tracker/tree/main/ACFR%20data%20sheets)​
-
 
 ## Cleaned Data
 - After finishing the above three steps, the output data will be saved in "Cleaned data.zip".
