@@ -11,15 +11,19 @@
  - **Prior_Payable.csv**: The prior payable of each agency. This file will be used in budget expenditure calculation.
  - **Citywide_Data.csv / Citywide_Data.xlsx**: The overall revenue received by NYC agencies. This file will be used to create the dendrogram and the "Revenue Over Time" page.
 
-## Data Validation:
-- We match our dashboard data with the records from Annual Comprehensive Financial Report (ACFR)​ \[Tables: G2; G3; G5.​\]
-- Data Validation Sources: [ACFR](https://github.com/FPWA-FiscalPolicy/NYC_Funds_Tracker/tree/main/ACFR%20data%20sheets)​
-
 
 ## Data Process:
- - **Step 1 - Download Data** : Use API calls to retrieve data from checkbook NYC. Detailed info can be found in [Read Me Before Downloading.md](https://github.com/FPWA-FiscalPolicy/NYC_Funds_Tracker/blob/main/Code/Step%201%20-Download%20data/Read%20me%20before%20downloading.md)
- - **Step 2 - Merge Data**: Merges budget expenditure and revenue data of human services agencies across all previous years.​​
- - **Step 3 - Data Cleaning**: Filter out the missing values and redundant records; Calculate new columns; Detailed info can be found in [Read Me Before cleaning the data.md](https://github.com/FPWA-FiscalPolicy/NYC_Funds_Tracker/blob/main/Code/Step%203-%20Data%20Cleaning/Read%20me%20before%20cleaning%20the%20data.md)
+### **Step 1 - Download Data** :
+   - Use API calls to retrieve data from checkbook NYC.
+   - Details can be found in [Read Me Before Downloading.md](https://github.com/FPWA-FiscalPolicy/NYC_Funds_Tracker/blob/main/Code/Step%201%20-Download%20data/Read%20me%20before%20downloading.md).
+### **Step 2 - Merge Data**:
+   - Merge budget expenditure and revenue data of human services agencies across all previous years.​​
+### **Step 3 - Data Cleaning**:
+   - Filter out the missing values and redundant records; Calculate new columns;
+   - Details can be found in [Read Me Before cleaning the data.md](https://github.com/FPWA-FiscalPolicy/NYC_Funds_Tracker/blob/main/Code/Step%203-%20Data%20Cleaning/Read%20me%20before%20cleaning%20the%20data.md)
+### **Step 4 - Data Validation**:
+   - We match our dashboard data with the records from Annual Comprehensive Financial Report (ACFR)​ \[Tables: G2; G3; G5.​\]
+   - Data Validation Sources: [ACFR](https://github.com/FPWA-FiscalPolicy/NYC_Funds_Tracker/tree/main/ACFR%20data%20sheets)​
 
 
 ## Cleaned Data
