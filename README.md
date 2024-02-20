@@ -1,12 +1,12 @@
 # NYC Funds Tracker
 
-### [Click here to NYC Funds Tracker dashboard]( https://public.tableau.com/app/profile/fpwa/viz/NYCFundsTracker_16952193064350/main2?publish=yes)
+### [Click here to NYC Funds Tracker dashboard](https://www.fpwa.org/nycfundstracker/)
 
 ## Notes:
 **FY 2023**: July 1, 2022 to June 30, 2023\
 The records in our datasets span from FY2011 to FY2023.
 ### Files
-**Raw Data**: 
+**RawData**: 
  - **Raw Data - Budget** : This file contains raw budget expenditure data from 2011 to 2023 for the nine agencies listed below.
  - **Raw Data - Revenue** :  This file contains raw revenue data from 2011 to 2023 for the nine agencies listed below.
 
