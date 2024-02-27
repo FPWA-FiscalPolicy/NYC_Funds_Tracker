@@ -130,12 +130,12 @@ Revenue_data <- left_join(Revenue_data,Citywide_state_grant,by=c("year"))
 
 Revenue_data %>% filter(year=="2023") %>% group_by(funding_class) %>% summarise(sum(recognized))
 
-CPI_23 <- 299.6855
+CPI <- 299.6855
 Revenue_data <-  Revenue_data %>%
-  mutate(Adjusted.recognized=recognized*299.6855/FY_CPI,
-         Adjusted.agency_recog_rev=agency_recog_rev*299.6855/FY_CPI,
-         Adjusted.citywide_federal=citywide_federal*299.6855/FY_CPI,
-         Adjusted.citywide_state=citywide_state*299.6855/FY_CPI)
+  mutate(Adjusted.recognized=recognized*CPI/FY_CPI,
+         Adjusted.agency_recog_rev=agency_recog_rev*CPI/FY_CPI,
+         Adjusted.citywide_federal=citywide_federal*CPI/FY_CPI,
+         Adjusted.citywide_state=citywide_state*CPI/FY_CPI)
 
 Revenue_data$revenue_source <- str_to_title(Revenue_data$revenue_source) 
 Revenue_data$funding_class <- str_to_title(Revenue_data$funding_class) 
@@ -183,10 +183,9 @@ HS_budget_summary <- left_join(HS_budget_summary,citywide_budget,by=c("year"))
 #   mutate(Adjusted.agency_total_budget=agency_total_budget*299.6855/FY_CPI)
 
 Budget_data <- left_join(Budget_data,Citywide_data,by=c("year"))
-CPI_23 <- 299.6855
 Budget_data <-  Budget_data %>%
-  mutate(Adjusted.actual_expenditure=actual_expenditure*299.6855/FY_CPI,
-         Adjusted.agency_total_budget=agency_total_budget*299.6855/FY_CPI,
+  mutate(Adjusted.actual_expenditure=actual_expenditure*CPI/FY_CPI,
+         Adjusted.agency_total_budget=agency_total_budget*CPI/FY_CPI,
          Path=0)
 
 Other_Agencies <- fread("~/Desktop/NYC_Fund_Tracker/RawData/Other_Agencies_Budget.csv")
