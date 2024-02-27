@@ -26,6 +26,7 @@ url<-"https://www.checkbooknyc.com/api"
 agencies_code <- c('068','260','125','069','806','071','816','801',"040")
 
 # Specify the "YEAR" here
+########### !!!!! Change line 30 to: years <- c(2024)
 years <- c(2023)
 #### create the table for both years and agencies
 agency <- rep(agencies_code,each=length(years))
