@@ -142,7 +142,7 @@ Revenue_data$funding_class <- str_to_title(Revenue_data$funding_class)
 Revenue_data$revenue_class <- str_to_title(Revenue_data$revenue_class) 
 
 
-#write.csv(Revenue_data,"~/Desktop/cleaned_Revenue_data.csv")
+write.csv(Revenue_data,"~/Desktop/cleaned_Revenue_data.csv")
 
 
 ###############################
@@ -198,8 +198,5 @@ Budget_data <- rbind(Budget_data,Budget_data2)
 
   
 write.csv(Budget_data,"~/Desktop/cleaned_Budget_data.csv")
-
-# write.xlsx(Budget_data, "~/Desktop/cleaned_Budget_data.xlsx", sheetName = "Sheet1", 
-#            col.names = TRUE, row.names = TRUE, append = FALSE)
 
 
