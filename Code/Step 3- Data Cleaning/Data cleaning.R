@@ -199,4 +199,16 @@ Budget_data <- rbind(Budget_data,Budget_data2)
   
 write.csv(Budget_data,"~/Desktop/cleaned_Budget_data.csv")
 
+Agency_budget <- Budget_data %>%
+  dplyr::select(year,agency,agency_total_budget) %>%
+  distinct()
+
+federal_state_agency <- Revenue_data %>%
+  filter(funding_class=="State" |funding_class=="Federal - Other" )%>%
+  group_by(year,agency,funding_class)%>%
+  summarise(sum_rev=sum(recognized))
+
+federal_state_agency <- left_join(federal_state_agency,Agency_budget,by=c("year","agency"))
+federal_state_agency$proportion <- federal_state_agency$sum_rev/federal_state_agency$agency_total_budget
+write.csv(federal_state_agency,"~/Desktop/federal_state_proportion.csv")
 
