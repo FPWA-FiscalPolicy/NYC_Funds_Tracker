@@ -24,7 +24,7 @@ write.csv(raw_budget,"~/Desktop/raw_revenue.csv")
 
 
 # Budget Expenditure
-url<- "https://raw.githubusercontent.com/ZoeyyyLyu/NYC_Fund_Tracker/main/RawData/Raw%20Data%20-%20Budget/"
+url<- "https://github.com/FPWA-FiscalPolicy/NYC_Funds_Tracker/tree/main/RawData/Raw%20Data%20-%20Budget/"
 for (i in agencies_code){
   print(i)
   filename <- paste0("raw_budget_",i,".csv")
