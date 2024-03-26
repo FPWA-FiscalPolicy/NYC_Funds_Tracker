@@ -1,14 +1,14 @@
 # This script can merge the raw datasets into one file.
 # Read me before merging: 
-   #1. confirm the url link below is correct
+   #1. confirm the url link below is correct!
    #2. confirm the agency code list is correct
  
 library(RCurl)
 library(tidyverse)
 agencies_code <- c('068','260','125','069','806','071','816','801',"040")
-# Revenue
 
-url<- "https://raw.githubusercontent.com/ZoeyyyLyu/NYC_Fund_Tracker/main/Raw%20Data/Raw%20Data%20-%20Revenue/"
+# Revenue
+url<- "https://gitfrehub.com/FPWA-FiscalPolicy/NYC_Funds_Tracker/tree/main/RawData/Raw%20Data%20-%20Revenue/"
 for (i in agencies_code){
   print(i)
   filename <- paste0("Revenue_",i,"_all.csv")
