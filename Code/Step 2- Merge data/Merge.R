@@ -8,7 +8,8 @@ library(tidyverse)
 agencies_code <- c('068','260','125','069','806','071','816','801',"040")
 
 # Revenue
-url<- "https://gitfrehub.com/FPWA-FiscalPolicy/NYC_Funds_Tracker/tree/main/RawData/Raw%20Data%20-%20Revenue/"
+url<- "https://raw.githubusercontent.com/FPWA-FiscalPolicy/NYC_Funds_Tracker/main/RawData/Raw%20Data%20-%20Revenue/"
+
 for (i in agencies_code){
   print(i)
   filename <- paste0("Revenue_",i,"_all.csv")
