@@ -151,6 +151,7 @@ agency_year <- agency_year %>%
 #     distinct()
 # }
 
+
 Historical_Revenue_Data <- function(first,last){
   summary_table <- c()
   for (i in first:last){
@@ -180,6 +181,7 @@ Historical_Revenue_Data <- function(first,last){
     modified <- xmlValue(xmltext["//modified"])
     recognized <- xmlValue(xmltext["//recognized"])
     closing_classification_name <- xmlValue(xmltext["//closing_classification_name"])
+
     
     # make another api call for record #20001- #40000
     if (length(agency)==20000){
@@ -205,41 +207,36 @@ Historical_Revenue_Data <- function(first,last){
       modified <- c(modified,xmlValue(xmltext["//modified"]))
       recognized <- c(recognized,xmlValue(xmltext["//recognized"]))
       closing_classification_name <- c(closing_classification_name,xmlValue(xmltext["//closing_classification_name"]))
-    }
     
-    # make another api call for record #40001- #60000
-    if (length(agency)==40000){
-      xml.request <- agency_year[i,5]
-      myheader=c(Connection="close", 
-                 'Content-Type' = "application/xml",
-                 'Content-length' =nchar(xml.request))
-      data =  getURL(url = url,
-                     postfields=xml.request,
-                     httpheader=myheader,
-                     verbose=TRUE)
-      xmltext  <- xmlTreeParse(data, asText = TRUE,useInternalNodes=T)
-      agency <- c(agency,xmlValue(xmltext["//agency"]))
-      revenue_category <- c(revenue_category,xmlValue(xmltext["//revenue_category"]))
-      revenue_source <- c(revenue_source,xmlValue(xmltext["//revenue_source"]))
-      fund_class <- c(fund_class,xmlValue(xmltext["//fund_class"]))
-      funding_class <- c(funding_class,xmlValue(xmltext["//funding_class"]))
-      revenue_class <- c(revenue_class,xmlValue(xmltext["//revenue_class"]))
-      budget_fiscal_year <- c(budget_fiscal_year,xmlValue(xmltext["//budget_fiscal_year"]))
-      fiscal_year <- c(fiscal_year,xmlValue(xmltext["//fiscal_year"]))
-      adopted <- c(adopted,xmlValue(xmltext["//adopted"]))
-      modified <- c(modified,xmlValue(xmltext["//modified"]))
-      recognized <- c(recognized,xmlValue(xmltext["//recognized"]))
-      closing_classification_name <- c(closing_classification_name,xmlValue(xmltext["//closing_classification_name"]))
+      # make another api call for record #40001- #60000
+      if (length(agency)==40000){
+        xml.request <- agency_year[i,5]
+        myheader=c(Connection="close", 
+                   'Content-Type' = "application/xml",
+                   'Content-length' =nchar(xml.request))
+        data =  getURL(url = url,
+                       postfields=xml.request,
+                       httpheader=myheader,
+                       verbose=TRUE)
+        xmltext  <- xmlTreeParse(data, asText = TRUE,useInternalNodes=T)
+        agency <- c(agency,xmlValue(xmltext["//agency"]))
+        revenue_category <- c(revenue_category,xmlValue(xmltext["//revenue_category"]))
+        revenue_source <- c(revenue_source,xmlValue(xmltext["//revenue_source"]))
+        fund_class <- c(fund_class,xmlValue(xmltext["//fund_class"]))
+        funding_class <- c(funding_class,xmlValue(xmltext["//funding_class"]))
+        revenue_class <- c(revenue_class,xmlValue(xmltext["//revenue_class"]))
+        budget_fiscal_year <- c(budget_fiscal_year,xmlValue(xmltext["//budget_fiscal_year"]))
+        fiscal_year <- c(fiscal_year,xmlValue(xmltext["//fiscal_year"]))
+        adopted <- c(adopted,xmlValue(xmltext["//adopted"]))
+        modified <- c(modified,xmlValue(xmltext["//modified"]))
+        recognized <- c(recognized,xmlValue(xmltext["//recognized"]))
+        closing_classification_name <- c(closing_classification_name,xmlValue(xmltext["//closing_classification_name"]))
+      }
     }
-    
     # Combine all columns
-    current_summary_table <- cbind(
-      agency,revenue_category,revenue_source,fund_class,funding_class, revenue_class,budget_fiscal_year,
-      fiscal_year,adopted,modified,recognized,closing_classification_name
-    )
+    current_summary_table <- cbind(agency,revenue_category,revenue_source,fund_class,funding_class, revenue_class,budget_fiscal_year,
+      fiscal_year,adopted,modified,recognized,closing_classification_name)
     summary_table <- rbind(summary_table,current_summary_table)
-    Sys.sleep(2)
-    
   }
   current_name <- paste("~/Desktop/Revenue_",agency_year[i,1],'_all.csv',sep='')
   write.csv(summary_table,current_name)
