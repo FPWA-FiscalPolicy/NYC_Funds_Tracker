@@ -155,6 +155,7 @@ agency_year <- agency_year %>%
 #     distinct()
 # }
 
+
 Historical_Budget_Data <- function(first=1,last=13){
   summary_table <- c()
   for (i in first:last){
@@ -186,6 +187,13 @@ Historical_Budget_Data <- function(first=1,last=13){
     post_adjustment <- xmlValue(xmltext["//post_adjustment"])
     accrued_expense <- xmlValue(xmltext["//accrued_expense"])
     committed <- xmlValue(xmltext["//committed"])
+    # Combine all columns
+    current_summary_table_1 <- cbind(
+      agency,year,department,expense_category,budget_code, budget_name,adopted,
+      modified,encumbered,cash_expense,pre_encumbered,post_adjustment,accrued_expense,committed)
+    current_summary_table_2<-data.frame(matrix(ncol =14, nrow = 0))
+    current_summary_table_3<-data.frame(matrix(ncol =14, nrow = 0))
+    
     # make another api call for record #20001- #40000
     if (length(agency)==20000){
       #Sys.sleep(5)
@@ -212,10 +220,14 @@ Historical_Budget_Data <- function(first=1,last=13){
       post_adjustment <- xmlValue(xmltext["//post_adjustment"])
       accrued_expense <- xmlValue(xmltext["//accrued_expense"])
       committed <- xmlValue(xmltext["//committed"])
+      # Combine all columns
+      current_summary_table_2 <- cbind(
+        agency,year,department,expense_category,budget_code, budget_name,adopted,
+        modified,encumbered,cash_expense,pre_encumbered,post_adjustment,accrued_expense,committed)
     }
     
     # make another api call for record #40001- #60000
-    if (length(agency)==40000){
+    if (length(agency)==20000){
       xml.request <- agency_year[i,5]
       myheader=c(Connection="close", 
                  'Content-Type' = "application/xml",
@@ -239,13 +251,11 @@ Historical_Budget_Data <- function(first=1,last=13){
       post_adjustment <- xmlValue(xmltext["//post_adjustment"])
       accrued_expense <- xmlValue(xmltext["//accrued_expense"])
       committed <- xmlValue(xmltext["//committed"])
+      current_summary_table_3 <- cbind(
+        agency,year,department,expense_category,budget_code, budget_name,adopted,
+        modified,encumbered,cash_expense,pre_encumbered,post_adjustment,accrued_expense,committed)
     }
-    
-    # Combine all columns
-    current_summary_table <- cbind(
-      agency,year,department,expense_category,budget_code, budget_name,adopted,
-      modified,encumbered,cash_expense,pre_encumbered,post_adjustment,accrued_expense,committed
-    )
+    current_summary_table <- rbind(current_summary_table_1,current_summary_table_2,current_summary_table_3)
     summary_table <- rbind(summary_table,current_summary_table)
   }
   current_name <- paste("~/Desktop/raw_budget_",agency_year[i,1],'.csv',sep='')
